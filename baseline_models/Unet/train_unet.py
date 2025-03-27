@@ -30,6 +30,7 @@ import random
 
 @hydra.main(version_base="1.2", config_path="conf", config_name="config")
 def main(cfg: DictConfig) -> float:
+    print("in main")
     torch.set_float32_matmul_precision("high")
     # For PyTorch
     torch.manual_seed(cfg.seed)

@@ -26,7 +26,7 @@ class MLP(modulus.Module):
             strato_lev_out: int = 12, # number of levels to set to zero
             loc_embedding: bool = False, # whether or not to use location embedding
             embedding_type: str = "positional", # type of location embedding
-            hidden_layers_dim : list = [] # list of the hidden layers size
+            hidden_layers_dim : list = [384, 1024, 640] # list of the hidden layers size
     ):
         super().__init__(meta=MLPMetaData())
         
