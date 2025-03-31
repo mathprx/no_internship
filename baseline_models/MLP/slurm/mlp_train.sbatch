@@ -26,7 +26,9 @@ conda_init
 conda activate venv2
 module load cuda
 
-source ddp_export.sh
+source ../ddp_export.sh
+
+python -c "import torch; print(torch.__version__)"
 
 cd ..
 srun -n $SLURM_NTASKS python train_mlp.py --config-name=config
