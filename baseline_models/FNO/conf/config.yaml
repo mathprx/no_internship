@@ -72,7 +72,7 @@ input_clip_rhonly: True
 seed: 43
 restart_path: ''
 save_path: '/work/FAC/FGSE/IDYST/tbeucler/ai4pex/Physics_no_offline/saved_models'
-expname: 'MLR'
+expname: 'FNO'
 num_workers: 32
 batch_size: 1024
 epochs: 24
@@ -107,4 +107,7 @@ wandb:
    project: "climsim3_ensembles"
    entity: "cbrain"
 
-# model hyperparameters (nothing for this model)
+# model hyperparameters 
+modes: 1, # number of Fourier modes to multiply, at most floor(N/2) + 1
+channel_dim: 93, # channel dimension
+out_network_dim: 128 # width of the output network

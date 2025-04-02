@@ -37,6 +37,7 @@ def main(cfg: DictConfig) -> float:
     # For CUDA if using GPU
     torch.cuda.manual_seed(cfg.seed)
     torch.cuda.manual_seed_all(cfg.seed)  # if using multi-GPU
+    
     # For other libraries
     np.random.seed(cfg.seed)
     random.seed(cfg.seed)
@@ -157,8 +158,6 @@ def main(cfg: DictConfig) -> float:
         target_scalar_num = data.target_scalar_num,
         output_prune = cfg.output_prune,
         strato_lev_out = cfg.strato_lev_out,
-        loc_embedding = cfg.loc_embedding,
-        embedding_type = cfg.embedding_type,
         hidden_layers_dim=cfg.hidden_layers_dim
     ).to(dist.device)
 

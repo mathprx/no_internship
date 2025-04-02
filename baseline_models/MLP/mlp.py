@@ -36,8 +36,6 @@ class MLP(modulus.Module):
         self.target_scalar_num = target_scalar_num
         self.output_prune = output_prune
         self.strato_lev_out = strato_lev_out
-        self.loc_embedding = loc_embedding
-        self.embedding_type = embedding_type
         self.vertical_level_num = 60
         self.inputs_dim = input_profile_num * self.vertical_level_num + input_scalar_num
         self.targets_dim = target_profile_num * self.vertical_level_num + target_scalar_num

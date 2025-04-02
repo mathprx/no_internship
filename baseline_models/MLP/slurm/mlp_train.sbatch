@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -l
 
 #SBATCH --mail-type ALL
 #SBATCH --mail-user mathieu.prioux@unil.ch
@@ -6,12 +6,13 @@
 
 #SBATCH --partition gpu
 
-#SBATCH -t 30:00
+#SBATCH -t 24:00:00
+#SBATCH --mem 128G
 #SBATCH --nodes 1
-#SBATCH --ntasks 2
-#SBATCH --ntasks-per-node 2
-#SBATCH --cpus-per-task 24
-#SBATCH --gpus-per-node 2
+#SBATCH --ntasks 1
+#SBATCH --ntasks-per-node 1
+#SBATCH --cpus-per-task 32
+#SBATCH --gpus-per-node 1
 
 #SBATCH --job-name mlp_train
 #SBATCH --output mlp_train_out.out
@@ -19,16 +20,12 @@
 ##SBATCH --output=out_%j.out
 ##SBATCH --error=eo_%j.err
 
-cmd="python train_mlp.py --config-name=config"
-
 module load miniforge3
 conda_init
 conda activate venv2
 module load cuda
 
 source ../ddp_export.sh
-
-python -c "import torch; print(torch.__version__)"
 
 cd ..
 srun -n $SLURM_NTASKS python train_mlp.py --config-name=config

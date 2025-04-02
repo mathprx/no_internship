@@ -1,7 +1,7 @@
-#!/bin/bash
+#!/bin/bash -l
 
-#SBATCH --mail-type ALL
-#SBATCH --mail-user mathieu.prioux@unil.ch
+##SBATCH --mail-type ALL
+##SBATCH --mail-user mathieu.prioux@unil.ch
 #SBATCH --account tbeucler_ai4pex
 
 #SBATCH --partition gpu

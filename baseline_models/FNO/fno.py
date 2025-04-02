@@ -1,6 +1,7 @@
 import torch
 import torch.nn as nn
 from dataclasses import dataclass
+import torch.nn.functional as F
 from no_layers import SpectralConv1d
 import modulus
 
@@ -25,26 +26,18 @@ class FNO(modulus.Module):
             target_scalar_num: int = 8, # number of target scalars
             output_prune: bool = True, # whether or not we prune strato_lev_out levels
             strato_lev_out: int = 12, # number of levels to set to zero
-            loc_embedding: bool = False, # whether or not to use location embedding
-            embedding_type: str = "positional", # type of location embedding
             modes: int = 1, # number of Fourier modes to multiply, at most floor(N/2) + 1
-            channel_dim : int = 93 # channel dimension
+            channel_dim: int = 93, # channel dimension
+            out_network_dim: int = 128 # width of the output network
     ):
         super().__init__(meta=FNOMetaData())
-
-
-        """
-        blabla
-        """
-
+        
         self.input_profile_num = input_profile_num
         self.input_scalar_num = input_scalar_num
         self.target_profile_num = target_profile_num
         self.target_scalar_num = target_scalar_num
         self.output_prune = output_prune
         self.strato_lev_out = strato_lev_out
-        self.loc_embedding = loc_embedding
-        self.embedding_type = embedding_type
         self.vertical_level_num = 60
         self.inputs_dim = input_profile_num * self.vertical_level_num + input_scalar_num
         self.targets_dim = target_profile_num * self.vertical_level_num + target_scalar_num
@@ -52,6 +45,9 @@ class FNO(modulus.Module):
 
         self.modes1 = modes
         self.channel_dim = channel_dim
+        self.out_network_dim = out_network_dim
+
+
         self.fc0 = nn.Linear(self.input_scalar_num + self.input_profile_num, self.channel_dim) 
 
 
@@ -65,8 +61,8 @@ class FNO(modulus.Module):
         self.w3 = nn.Conv1d(self.channel_dim, self.channel_dim, 1)
 
 
-        self.fc1 = nn.Linear(self.channel_dim, 128) # WHY 128 ???????????
-        self.fc2 = nn.Linear(128, self.target_profile_num+self.target_scalar_num)
+        self.fc1 = nn.Linear(self.channel_dim, self.out_network_dim)
+        self.fc2 = nn.Linear(self.out_network_dim, self.target_profile_num+self.target_scalar_num)
 
 
     def forward(self, x):

@@ -105,7 +105,7 @@ early_stop_step: -1
 logger: 'wandb'
 wandb:
    project: "climsim3_ensembles"
-   entity: "cbrain"
+   entity: "mathieu-prioux-university-of-lausanne"
 
 # model hyperparameters
 hidden_layers_dim: [384, 1024, 640]
