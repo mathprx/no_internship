@@ -24,9 +24,7 @@ class MLP(modulus.Module):
             target_scalar_num: int = 8, # number of target scalars
             output_prune: bool = True, # whether or not we prune strato_lev_out levels
             strato_lev_out: int = 12, # number of levels to set to zero
-            loc_embedding: bool = False, # whether or not to use location embedding
-            embedding_type: str = "positional", # type of location embedding
-            hidden_layers_dim : list = [384, 1024, 640] # list of the hidden layers size
+            hidden_layers_dim : list[int] = [384, 1024, 640] # list of the hidden layers size
     ):
         super().__init__(meta=MLPMetaData())
         
@@ -43,9 +41,10 @@ class MLP(modulus.Module):
         
         layers = []
         previous_dim = self.inputs_dim
-        for hidden_dim in range(self.hidden_layers_dim):
+        for hidden_dim in self.hidden_layers_dim:
             layers.append(nn.Linear(previous_dim, hidden_dim))
             layers.append(nn.ReLU())
+            previous_dim = hidden_dim
         layers.append(nn.Linear(previous_dim, self.targets_dim))
 
         self.model = nn.Sequential(*layers)

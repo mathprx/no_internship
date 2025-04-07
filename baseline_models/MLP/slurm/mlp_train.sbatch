@@ -14,6 +14,16 @@
 #SBATCH --cpus-per-task 32
 #SBATCH --gpus-per-node 1
 
+##SBATCH --partition cpu
+
+##SBATCH -t 00:10:00
+##SBATCH --mem 8G
+##SBATCH --nodes 1
+##SBATCH --ntasks 1
+##SBATCH --ntasks-per-node 1
+##SBATCH --cpus-per-task 32
+
+
 #SBATCH --job-name mlp_train
 #SBATCH --output mlp_train_out.out
 
@@ -23,7 +33,7 @@
 module load miniforge3
 conda_init
 conda activate venv2
-module load cuda
+module load cuda/12.6.2
 
 source ../ddp_export.sh
 

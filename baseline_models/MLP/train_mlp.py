@@ -1,3 +1,4 @@
+print("starting learning script")
 import torch
 from torch.utils.data import Dataset, DataLoader
 import numpy as np
@@ -27,6 +28,8 @@ from modulus.distributed import DistributedManager
 from torch.utils.data.distributed import DistributedSampler
 import os, gc
 import random
+
+print("packages imported")
 
 @hydra.main(version_base="1.2", config_path="conf", config_name="config")
 def main(cfg: DictConfig) -> float:
@@ -151,6 +154,7 @@ def main(cfg: DictConfig) -> float:
     # create model
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     #print('debug: output_size', output_size, output_size//60, output_size%60)
+    hidden_layers_dim = OmegaConf.to_container(cfg.hidden_layers_dim, resolve = True)
     model = MLP(
         input_profile_num = data.input_profile_num,
         input_scalar_num = data.input_scalar_num,
@@ -158,7 +162,7 @@ def main(cfg: DictConfig) -> float:
         target_scalar_num = data.target_scalar_num,
         output_prune = cfg.output_prune,
         strato_lev_out = cfg.strato_lev_out,
-        hidden_layers_dim=cfg.hidden_layers_dim
+        hidden_layers_dim=hidden_layers_dim
     ).to(dist.device)
 
     if len(cfg.restart_path) > 0:
