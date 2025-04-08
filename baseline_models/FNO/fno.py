@@ -10,7 +10,7 @@ device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
 @dataclass
 class FNOMetaData(modulus.ModelMetaData):
-    name: str = "mlr"
+    name: str = "fno"
     # Optimization
     jit: bool = True
     cuda_graphs: bool = True
@@ -26,7 +26,7 @@ class FNO(modulus.Module):
             target_scalar_num: int = 8, # number of target scalars
             output_prune: bool = True, # whether or not we prune strato_lev_out levels
             strato_lev_out: int = 12, # number of levels to set to zero
-            modes: int = 1, # number of Fourier modes to multiply, at most floor(N/2) + 1
+            modes: int = 30, # number of Fourier modes to multiply, at most floor(N/2) + 1 where N=vertical_levels_num=60
             channel_dim: int = 93, # channel dimension
             out_network_dim: int = 128 # width of the output network
     ):

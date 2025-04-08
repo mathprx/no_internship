@@ -151,6 +151,8 @@ def main(cfg: DictConfig) -> float:
     # create model
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     #print('debug: output_size', output_size, output_size//60, output_size%60)
+    print(data.input_profile_num,data.input_scalar_num)
+    
     model = FNO(
         input_profile_num = data.input_profile_num,
         input_scalar_num = data.input_scalar_num,
@@ -456,6 +458,7 @@ def main(cfg: DictConfig) -> float:
     if dist.rank == 0:
         logger.info("Start recovering the model from the top checkpoint to do torchscript conversion")         
         #recover the model weight to the top checkpoint
+        print(top_checkpoints[0][1])
         model = modulus.Module.from_checkpoint(top_checkpoints[0][1]).to(device)
 
         # Save the model

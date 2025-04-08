@@ -75,7 +75,7 @@ save_path: '/work/FAC/FGSE/IDYST/tbeucler/ai4pex/Physics_no_offline/saved_models
 expname: 'FNO'
 num_workers: 32
 batch_size: 1024
-epochs: 24
+epochs: 2
 learning_rate: 0.0001
 save_top_ckpts: 15
 top_ckpt_mode: 'min'
@@ -105,9 +105,9 @@ early_stop_step: -1
 logger: 'wandb'
 wandb:
    project: "climsim3_ensembles"
-   entity: "cbrain"
+   entity: "mathieu-prioux-university-of-lausanne"
 
 # model hyperparameters 
-modes: 1, # number of Fourier modes to multiply, at most floor(N/2) + 1
-channel_dim: 93, # channel dimension
+modes: 30 # number of Fourier modes to multiply, at most floor(N/2) + 1 with N=height=60
+channel_dim: 96 # channel dimension
 out_network_dim: 128 # width of the output network

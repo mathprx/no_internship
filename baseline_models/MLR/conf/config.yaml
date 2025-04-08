@@ -105,6 +105,6 @@ early_stop_step: -1
 logger: 'wandb'
 wandb:
    project: "climsim3_ensembles"
-   entity: "cbrain"
+   entity: "mathieu-prioux-university-of-lausanne"
 
 # model hyperparameters (nothing for this model)

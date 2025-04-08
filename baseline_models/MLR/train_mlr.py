@@ -156,9 +156,7 @@ def main(cfg: DictConfig) -> float:
         target_profile_num = data.target_profile_num,
         target_scalar_num = data.target_scalar_num,
         output_prune = cfg.output_prune,
-        strato_lev_out = cfg.strato_lev_out,
-        loc_embedding = cfg.loc_embedding,
-        embedding_type = cfg.embedding_type,
+        strato_lev_out = cfg.strato_lev_out
     ).to(dist.device)
 
     if len(cfg.restart_path) > 0:

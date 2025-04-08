@@ -24,8 +24,6 @@ class MLR(modulus.Module):
             target_scalar_num: int = 8, # number of target scalars
             output_prune: bool = True, # whether or not we prune strato_lev_out levels
             strato_lev_out: int = 12, # number of levels to set to zero
-            loc_embedding: bool = False, # whether or not to use location embedding
-            embedding_type: str = "positional", # type of location embedding
     ):
         super().__init__(meta=MLPMetaData())
         
@@ -35,8 +33,6 @@ class MLR(modulus.Module):
         self.target_scalar_num = target_scalar_num
         self.output_prune = output_prune
         self.strato_lev_out = strato_lev_out
-        self.loc_embedding = loc_embedding
-        self.embedding_type = embedding_type
         self.vertical_level_num = 60
         self.inputs_dim = input_profile_num * self.vertical_level_num + input_scalar_num
         self.targets_dim = target_profile_num * self.vertical_level_num + target_scalar_num
