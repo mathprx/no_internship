@@ -10,14 +10,14 @@ device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
 @dataclass
 class FNOMetaData(modulus.ModelMetaData):
-    name: str = "fno"
+    name: str = "fno_mathieu"
     # Optimization
     jit: bool = True
     cuda_graphs: bool = True
     amp_cpu: bool = False
     amp_gpu: bool = False
 
-class FNO(modulus.Module):
+class FNO_mathieu(modulus.Module):
     def __init__(
             self,
             input_profile_num: int = 9, # number of input profile

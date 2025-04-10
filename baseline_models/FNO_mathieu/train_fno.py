@@ -19,7 +19,7 @@ from modulus.launch.logging import (
 from climsim_utils.data_utils import *
 
 from climsim_datasets import TrainingDataset, ValidationDataset
-from fno import FNO
+from fno_mathieu import FNO_mathieu
 from wrap_model import WrappedModel
 import hydra
 from torch.nn.parallel import DistributedDataParallel
@@ -153,7 +153,7 @@ def main(cfg: DictConfig) -> float:
     #print('debug: output_size', output_size, output_size//60, output_size%60)
     print(data.input_profile_num,data.input_scalar_num)
     
-    model = FNO(
+    model = FNO_mathieu(
         input_profile_num = data.input_profile_num,
         input_scalar_num = data.input_scalar_num,
         target_profile_num = data.target_profile_num,

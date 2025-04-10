@@ -72,10 +72,10 @@ input_clip_rhonly: True
 seed: 43
 restart_path: ''
 save_path: '/work/FAC/FGSE/IDYST/tbeucler/ai4pex/Physics_no_offline/saved_models'
-expname: 'FNO'
+expname: 'FNO_mathieu'
 num_workers: 32
 batch_size: 1024
-epochs: 2
+epochs: 24
 learning_rate: 0.0001
 save_top_ckpts: 15
 top_ckpt_mode: 'min'
