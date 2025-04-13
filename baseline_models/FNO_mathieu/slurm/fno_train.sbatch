@@ -24,7 +24,7 @@
 module load miniforge3
 conda_init
 conda activate no_training
-module load cuda
+module load cuda/12.6.2
 
 source ../ddp_export.sh
 

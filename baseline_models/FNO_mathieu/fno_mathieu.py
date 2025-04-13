@@ -67,20 +67,20 @@ class FNO_mathieu(modulus.Module):
 
     def forward(self, x):
         '''
-        x: (batch, input_profile_num*levels+input_scalar_num)
+        x: (batch, input_profile_num*vertical_level_num + input_scalar_num)
         '''
 
-        # Set x : (batch, vertical_level, input_profile_num + input_scalar_num) by repeating scalar values
+        # Set x to (batch, vertical_level, input_profile_num + input_scalar_num) by repeating scalar values
         x_scalar = x[:,None,self.input_profile_num*self.vertical_level_num:].repeat(1,self.vertical_level_num,1)
         x_profile = x[:,:self.input_profile_num*self.vertical_level_num].reshape(-1,self.input_profile_num,self.vertical_level_num).permute(0,2,1)
         x = torch.cat([x_profile, x_scalar], dim=2)
 
 
-        # Lift to the channel dimension
+        # Lift to the channel dimension so x is (batch, vertical_level, channel_dim)
         x = self.fc0(x)
 
 
-        # Prepare input by permuting dimensions for Fourier layers
+        # Prepare input by permuting dimensions for Fourier layers so x is (batch, channel_dim, vertical_level)
         x = x.permute(0, 2, 1)
 
 
@@ -111,13 +111,15 @@ class FNO_mathieu(modulus.Module):
         x = x1 + x2
 
 
-        # The part I still don't fully understand
+        # set x back to (batch, vertical_level, channel_dim) 
         x = x.permute(0, 2, 1)
+
+        # set x back to (batch, vertical_level, target_profile_num + target_scalar_num)
         x = self.fc1(x)
         x = F.relu(x)
         x = self.fc2(x)
         
-        # set back x :(batch_size, input_profile_num*levels+input_scalar_num)
+        # set back x to (batch_size, target_profile_num*vertical_level_num + target_scalar_num) by taking the mean for scalar outputs and reshaping all
         x3d = x[...,:self.target_profile_num].reshape(-1,self.target_profile_num*self.vertical_level_num)
         x2d = torch.mean(x[...,self.target_profile_num:], dim=1).reshape(-1,self.target_scalar_num)
         x = torch.cat([x3d, x2d], dim=-1)
