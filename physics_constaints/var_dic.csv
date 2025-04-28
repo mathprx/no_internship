@@ -1,0 +1,1524 @@
+lat: latitude
+lon: longitude
+area: physics grid areas
+lev: hybrid level at midpoints (1000*(A+B))
+hyam: hybrid A coefficient at layer midpoints
+hybm: hybrid B coefficient at layer midpoints
+P0: reference pressure
+ilev: hybrid level at interfaces (1000*(A+B))
+hyai: hybrid A coefficient at layer interfaces
+hybi: hybrid B coefficient at layer interfaces
+swband: Shortwave wavenumber
+lwband: Longwave wavenumber
+time: time
+date: current date (YYYYMMDD)
+datesec: current seconds of current date
+time_bnds: time interval endpoints
+date_written: No long_name attribute
+time_written: No long_name attribute
+ndbase: base day
+nsbase: seconds of base day
+nbdate: base date (YYYYMMDD)
+nbsec: seconds of base date
+mdt: timestep
+ndcur: current day (from base day)
+nscur: current seconds of current day
+co2vmr: co2 volume mixing ratio
+ch4vmr: ch4 volume mixing ratio
+n2ovmr: n2o volume mixing ratio
+f11vmr: f11 volume mixing ratio
+f12vmr: f12 volume mixing ratio
+sol_tsi: total solar irradiance
+nsteph: current timestep
+CLDHGH: Vertically-integrated high cloud
+CLDICE: Grid box averaged cld ice amount
+CLDLIQ: Grid box averaged cld liquid amount
+CLDLOW: Vertically-integrated low cloud
+CLDMED: Vertically-integrated mid-level cloud
+CLDTOT: Vertically-integrated total cloud
+CLOUD: Cloud fraction
+DQ1PHYS: dQ1/dt from physics
+DQ2PHYS: dQ2/dt from physics
+DQ3PHYS: dQ3/dt from physics
+DTPHYS: dT/dt from physics
+DUPHYS: dU/dt from physics
+FLUT: Upwelling longwave flux at top of model
+LHFLX: Surface latent heat flux
+LWCF: Longwave cloud forcing
+PRECC: Convective precipitation rate (liq + ice)
+PRECT: Total (convective and large-scale) precipitation rate (liq + ice)
+Q: Specific humidity
+SHFLX: Surface sensible heat flux
+SWCF: Shortwave cloud forcing
+T: Temperature
+T500: Temperature at 500 mbar pressure surface
+T850: Temperature at 850 mbar pressure surface
+TMQ: Total (vertically integrated) precipitable water
+U: Zonal wind
+U500: Zonal wind at 500 mbar pressure surface
+U850: Zonal wind at 850 mbar pressure surface
+V: Meridional wind
+Z500: Geopotential Z at 500 mbar pressure surface
+Z850: Geopotential Z at 850 mbar pressure surface
+seq_infodata_nextsw_cday: unknown
+seq_infodata_precip_fact: unknown
+seq_infodata_case_name: unknown
+seq_timemgr_start_ymd: unknown
+seq_timemgr_start_tod: unknown
+seq_timemgr_ref_ymd: unknown
+seq_timemgr_ref_tod: unknown
+seq_timemgr_curr_ymd: unknown
+seq_timemgr_curr_tod: unknown
+budg_dataG: unknown
+budg_ns: unknown
+budg_dataGBGC: unknown
+budg_nsBGC: unknown
+fractions_ax_afrac: unknown
+fractions_ax_ifrac: unknown
+fractions_ax_ofrac: unknown
+fractions_ax_lfrac: unknown
+fractions_ax_lfrin: unknown
+a2x_ax_Sa_z: Height at the lowest model level
+a2x_ax_Sa_topo: Surface height
+a2x_ax_Sa_u: Zonal wind at the lowest model level
+a2x_ax_Sa_v: Meridional wind at the lowest model level
+a2x_ax_Sa_ugust: Extra wind speed due to gustiness
+a2x_ax_Sa_tbot: Temperature at the lowest model level
+a2x_ax_Sa_ptem: Potential temperature at the lowest model level
+a2x_ax_Sa_shum: Specific humidity at the lowest model level
+a2x_ax_Sa_pbot: Pressure at the lowest model level
+a2x_ax_Sa_dens: Density at the lowest model level
+a2x_ax_Sa_uovern: Froude Number
+a2x_ax_Sa_pslv: Sea level pressure
+a2x_ax_Sa_co2prog: Prognostic CO2 at the lowest model level
+a2x_ax_Sa_co2diag: Diagnostic CO2 at the lowest model level
+a2x_ax_Faxa_rainc: Convective precipitation rate
+a2x_ax_Faxa_rainl: Large-scale (stable) precipitation rate
+a2x_ax_Faxa_snowc: Convective snow rate (water equivalent)
+a2x_ax_Faxa_snowl: Large-scale (stable) snow rate (water equivalent)
+a2x_ax_Faxa_lwdn: Downward longwave heat flux
+a2x_ax_Faxa_swndr: Direct near-infrared incident solar radiation
+a2x_ax_Faxa_swvdr: Direct visible incident solar radiation
+a2x_ax_Faxa_swndf: Diffuse near-infrared incident solar radiation
+a2x_ax_Faxa_swvdf: Diffuse visible incident solar radiation
+a2x_ax_Faxa_swnet: Net shortwave radiation
+a2x_ax_Faxa_bcphidry: Hydrophylic black carbon dry deposition flux
+a2x_ax_Faxa_bcphodry: Hydrophobic black carbon dry deposition flux
+a2x_ax_Faxa_bcphiwet: Hydrophylic black carbon wet deposition flux
+a2x_ax_Faxa_ocphidry: Hydrophylic organic carbon dry deposition flux
+a2x_ax_Faxa_ocphodry: Hydrophobic organic carbon dry deposition flux
+a2x_ax_Faxa_ocphiwet: Hydrophylic organic carbon wet deposition flux
+a2x_ax_Faxa_dstwet1: Dust wet deposition flux (size 1)
+a2x_ax_Faxa_dstwet2: Dust wet deposition flux (size 2)
+a2x_ax_Faxa_dstwet3: Dust wet deposition flux (size 3)
+a2x_ax_Faxa_dstwet4: Dust wet deposition flux (size 4)
+a2x_ax_Faxa_dstdry1: Dust dry deposition flux (size 1)
+a2x_ax_Faxa_dstdry2: Dust dry deposition flux (size 2)
+a2x_ax_Faxa_dstdry3: Dust dry deposition flux (size 3)
+a2x_ax_Faxa_dstdry4: Dust dry deposition flux (size 4)
+xao_ax_So_avsdr: Direct albedo (visible radiation)
+xao_ax_So_anidr: Direct albedo (near-infrared radiation)
+xao_ax_So_avsdf: Diffuse albedo (visible radiation)
+xao_ax_So_anidf: Diffuse albedo (near-infrared radiation)
+xao_ax_So_tref: Reference temperature at 2 meters
+xao_ax_So_qref: Reference specific humidity at 2 meters
+xao_ax_So_ssq: Surface saturation specific humidity in ocean
+xao_ax_So_re: Square of exch. coeff (tracers)
+xao_ax_So_u10: 10m wind
+xao_ax_So_u10withgusts: 10m wind with gustiness
+xao_ax_So_duu10n: Wind speed squared at 10 meters
+xao_ax_So_ustar: Surface fraction velocity in ocean
+xao_ax_So_fswpen: Fraction of sw penetrating surface layer for diurnal cycle
+xao_ax_Faox_taux: Zonal surface stress
+xao_ax_Faox_tauy: Meridional surface stress
+xao_ax_Faox_lat: Surface latent heat flux
+xao_ax_Faox_sen: Sensible heat flux
+xao_ax_Faox_lwup: Surface upward longwave heat flux
+xao_ax_Faox_evap: Evaporation water flux
+xao_ax_Faox_swdn: Downward solar radiation
+xao_ax_Faox_swup: Upward solar radiation
+xao_ax_So_tbulk_diurn: atm/ocn flux temperature bulk
+xao_ax_So_tskin_diurn: atm/ocn flux temperature skin
+xao_ax_So_tskin_night_diurn: atm/ocn flux temperature skin at night
+xao_ax_So_tskin_day_diurn: atm/ocn flux temperature skin at day
+xao_ax_So_cskin_diurn: atm/ocn flux cool skin
+xao_ax_So_cskin_night_diurn: atm/ocn flux cool skin at night
+xao_ax_So_warm_diurn: atm/ocn flux warming
+xao_ax_So_salt_diurn: atm/ocn flux salting
+xao_ax_So_speed_diurn: atm/ocn flux speed
+xao_ax_So_regime_diurn: atm/ocn flux regime
+xao_ax_So_warmmax_diurn: atm/ocn flux warming dialy max
+xao_ax_So_windmax_diurn: atm/ocn flux wind daily max
+xao_ax_So_qsolavg_diurn: atm/ocn flux q-solar daily avg
+xao_ax_So_windavg_diurn: atm/ocn flux wind daily avg
+xao_ax_So_warmmaxinc_diurn: atm/ocn flux daily max increment
+xao_ax_So_windmaxinc_diurn: atm/ocn flux wind daily max increment
+xao_ax_So_qsolinc_diurn: atm/ocn flux q-solar increment
+xao_ax_So_windinc_diurn: atm/ocn flux wind increment
+xao_ax_So_ninc_diurn: atm/ocn flux increment counter
+fractions_lx_afrac: unknown
+fractions_lx_lfrac: unknown
+fractions_lx_lfrin: unknown
+fractions_ox_afrac: unknown
+fractions_ox_ifrac: unknown
+fractions_ox_ofrac: unknown
+fractions_ox_ifrad: unknown
+fractions_ox_ofrad: unknown
+o2x_ox_So_t: Surface temperature
+o2x_ox_So_s: Sea surface salinity
+o2x_ox_So_u: Zonal sea water velocity
+o2x_ox_So_v: unknown
+o2x_ox_So_dhdx: Zonal sea surface slope
+o2x_ox_So_ssh: Sea surface height
+o2x_ox_So_dhdy: Meridional sea surface slope
+o2x_ox_So_bldepth: Ocean Boundary Layer Depth
+o2x_ox_So_fswpen: Fraction of sw penetrating surface layer for diurnal cycle
+o2x_ox_So_blt: Ice shelf boundary layer ocean temperature
+o2x_ox_So_bls: Ice shelf boundary layer ocean salinity
+o2x_ox_So_htv: Ice shelf ocean heat transfer velocity
+o2x_ox_So_stv: Ice shelf ocean salinity transfer velocity
+o2x_ox_So_rhoeff: Ocean effective pressure
+o2x_ox_Faoo_h2otemp: Water temperature heat flux from ocean
+o2x_ox_Fioo_q: Ocean melt and freeze potential
+o2x_ox_Fioo_frazil: Ocean frazil production
+x2oacc_ox_Sa_pbot: Pressure at the lowest model level
+x2oacc_ox_Sa_pslv: Sea level pressure
+x2oacc_ox_So_duu10n: Wind speed squared at 10 meters
+x2oacc_ox_Si_ifrac: Fractional ice coverage wrt ocean
+x2oacc_ox_Si_bpress: Sea ice basal pressure
+"x2oacc_ox_Sw_ustokes_wavenumber_1: Partitioned Stokes drift u component, wavenumber 1"
+"x2oacc_ox_Sw_vstokes_wavenumber_1: Partitioned Stokes drift v component, wavenumber 1"
+"x2oacc_ox_Sw_ustokes_wavenumber_2: Partitioned Stokes drift u component, wavenumber 2"
+"x2oacc_ox_Sw_vstokes_wavenumber_2: Partitioned Stokes drift v component, wavenumber 2"
+"x2oacc_ox_Sw_ustokes_wavenumber_3: Partitioned Stokes drift u component, wavenumber 3"
+"x2oacc_ox_Sw_vstokes_wavenumber_3: Partitioned Stokes drift v component, wavenumber 3"
+"x2oacc_ox_Sw_ustokes_wavenumber_4: Partitioned Stokes drift u component, wavenumber 4"
+"x2oacc_ox_Sw_vstokes_wavenumber_4: Partitioned Stokes drift v component, wavenumber 4"
+"x2oacc_ox_Sw_ustokes_wavenumber_5: Partitioned Stokes drift u component, wavenumber 5"
+"x2oacc_ox_Sw_vstokes_wavenumber_5: Partitioned Stokes drift v component, wavenumber 5"
+"x2oacc_ox_Sw_ustokes_wavenumber_6: Partitioned Stokes drift u component, wavenumber 6"
+"x2oacc_ox_Sw_vstokes_wavenumber_6: Partitioned Stokes drift v component, wavenumber 6"
+x2oacc_ox_Sw_Hs: Significant wave height
+x2oacc_ox_Sw_Fp: Peak wave frequency
+x2oacc_ox_Sw_Dp: Peak wave direction
+x2oacc_ox_Sg_icemask: Ice sheet grid coverage on global grid
+x2oacc_ox_Sg_blit: Boundary layer interface temperature for ocean
+x2oacc_ox_Sg_blis: Boundary layer interface salinity for ocean
+x2oacc_ox_Sg_lithop: Ice sheet lithostatic pressure
+x2oacc_ox_Sg_icemask_grounded: Grounded ice mask
+x2oacc_ox_Sg_icemask_floating: Floating ice mask
+x2oacc_ox_Sg_tbot: Bottom layer ice temperature
+x2oacc_ox_Sg_dztbot: Bottom layer ice layer half thickness
+x2oacc_ox_Sa_co2prog: Prognostic CO2 at the lowest model level
+x2oacc_ox_Sa_co2diag: Diagnostic CO2 at the lowest model level
+x2oacc_ox_Faxa_rain: Water flux due to rain
+x2oacc_ox_Faxa_snow: Water flux due to snow
+x2oacc_ox_Faxa_prec: Water flux (rain+snow)
+x2oacc_ox_Faxa_lwdn: Downward longwave heat flux
+x2oacc_ox_Foxx_swnet: Net shortwave radiation
+x2oacc_ox_Faxa_bcphidry: Hydrophylic black carbon dry deposition flux
+x2oacc_ox_Faxa_bcphodry: Hydrophobic black carbon dry deposition flux
+x2oacc_ox_Faxa_bcphiwet: Hydrophylic black carbon wet deposition flux
+x2oacc_ox_Faxa_ocphidry: Hydrophylic organic carbon dry deposition flux
+x2oacc_ox_Faxa_ocphodry: Hydrophobic organic carbon dry deposition flux
+x2oacc_ox_Faxa_ocphiwet: Hydrophylic organic carbon wet deposition flux
+x2oacc_ox_Faxa_dstwet1: Dust wet deposition flux (size 1)
+x2oacc_ox_Faxa_dstwet2: Dust wet deposition flux (size 2)
+x2oacc_ox_Faxa_dstwet3: Dust wet deposition flux (size 3)
+x2oacc_ox_Faxa_dstwet4: Dust wet deposition flux (size 4)
+x2oacc_ox_Faxa_dstdry1: Dust dry deposition flux (size 1)
+x2oacc_ox_Faxa_dstdry2: Dust dry deposition flux (size 2)
+x2oacc_ox_Faxa_dstdry3: Dust dry deposition flux (size 3)
+x2oacc_ox_Faxa_dstdry4: Dust dry deposition flux (size 4)
+x2oacc_ox_Foxx_taux: Zonal surface stress
+x2oacc_ox_Foxx_tauy: Meridional surface stress
+x2oacc_ox_Foxx_lat: Surface latent heat flux
+x2oacc_ox_Foxx_sen: Sensible heat flux
+x2oacc_ox_Foxx_lwup: Surface upward longwave heat flux
+x2oacc_ox_Foxx_evap: unknown
+x2oacc_ox_Fioi_melth: Heat flux from melting
+x2oacc_ox_Fioi_meltw: Water flux due to melting
+x2oacc_ox_PFioi_bergh: Heat flux from melting icebergs
+x2oacc_ox_PFioi_bergw: Water flux due to melting icebergs
+x2oacc_ox_Fioi_salt: Salt flux
+x2oacc_ox_Fioi_bcphi: Hydrophylic black carbon deposition flux
+x2oacc_ox_Fioi_bcpho: Hydrophobic black carbon deposition flux
+x2oacc_ox_Fioi_flxdst: Dust flux
+x2oacc_ox_Foxx_rofl: Water flux due to runoff (liquid)
+x2oacc_ox_Foxx_rofi: Water flux due to runoff (frozen)
+x2oacc_ox_Fogx_qicelo: Subshelf liquid flux for ocean
+x2oacc_ox_Fogx_qiceho: Subshelf heat flux for the ocean
+x2oacc_ox_cnt: unknown
+xao_ox_So_avsdr: Direct albedo (visible radiation)
+xao_ox_So_anidr: Direct albedo (near-infrared radiation)
+xao_ox_So_avsdf: Diffuse albedo (visible radiation)
+xao_ox_So_anidf: Diffuse albedo (near-infrared radiation)
+xao_ox_So_tref: Reference temperature at 2 meters
+xao_ox_So_qref: Reference specific humidity at 2 meters
+xao_ox_So_ssq: Surface saturation specific humidity in ocean
+xao_ox_So_re: Square of exch. coeff (tracers)
+xao_ox_So_u10: 10m wind
+xao_ox_So_u10withgusts: 10m wind with gustiness
+xao_ox_So_duu10n: Wind speed squared at 10 meters
+xao_ox_So_ustar: Surface fraction velocity in ocean
+xao_ox_So_fswpen: Fraction of sw penetrating surface layer for diurnal cycle
+xao_ox_Faox_taux: Zonal surface stress
+xao_ox_Faox_tauy: Meridional surface stress
+xao_ox_Faox_lat: Surface latent heat flux
+xao_ox_Faox_sen: Sensible heat flux
+xao_ox_Faox_lwup: Surface upward longwave heat flux
+xao_ox_Faox_evap: Evaporation water flux
+xao_ox_Faox_swdn: Downward solar radiation
+xao_ox_Faox_swup: Upward solar radiation
+xao_ox_So_tbulk_diurn: atm/ocn flux temperature bulk
+xao_ox_So_tskin_diurn: atm/ocn flux temperature skin
+xao_ox_So_tskin_night_diurn: atm/ocn flux temperature skin at night
+xao_ox_So_tskin_day_diurn: atm/ocn flux temperature skin at day
+xao_ox_So_cskin_diurn: atm/ocn flux cool skin
+xao_ox_So_cskin_night_diurn: atm/ocn flux cool skin at night
+xao_ox_So_warm_diurn: atm/ocn flux warming
+xao_ox_So_salt_diurn: atm/ocn flux salting
+xao_ox_So_speed_diurn: atm/ocn flux speed
+xao_ox_So_regime_diurn: atm/ocn flux regime
+xao_ox_So_warmmax_diurn: atm/ocn flux warming dialy max
+xao_ox_So_windmax_diurn: atm/ocn flux wind daily max
+xao_ox_So_qsolavg_diurn: atm/ocn flux q-solar daily avg
+xao_ox_So_windavg_diurn: atm/ocn flux wind daily avg
+xao_ox_So_warmmaxinc_diurn: atm/ocn flux daily max increment
+xao_ox_So_windmaxinc_diurn: atm/ocn flux wind daily max increment
+xao_ox_So_qsolinc_diurn: atm/ocn flux q-solar increment
+xao_ox_So_windinc_diurn: atm/ocn flux wind increment
+xao_ox_So_ninc_diurn: atm/ocn flux increment counter
+fractions_ix_afrac: unknown
+fractions_ix_ifrac: unknown
+fractions_ix_ofrac: unknown
+i2x_ix_Si_avsdr: Direct albedo (visible radiation)
+i2x_ix_Si_anidr: Direct albedo (near-infrared radiation)
+i2x_ix_Si_avsdf: Diffuse albedo (visible radiation)
+i2x_ix_Si_anidf: Diffuse albedo (near-infrared radiation)
+i2x_ix_Si_tref: Reference temperature at 2 meters
+i2x_ix_Si_qref: Reference specific humidity at 2 meters
+i2x_ix_Si_t: Surface temperature
+i2x_ix_Si_snowh: Surface snow depth
+i2x_ix_Si_u10: 10m wind
+i2x_ix_Si_u10withgusts: 10m wind with gustiness
+i2x_ix_Si_ifrac: Fractional ice coverage wrt ocean
+i2x_ix_Si_bpress: Sea ice basal pressure
+i2x_ix_Si_ithick: Sea ice thickness
+i2x_ix_Faii_swnet: Net shortwave radiation
+i2x_ix_Fioi_swpen: Net shortwave radiation penetrating into ice and ocean
+i2x_ix_Faii_taux: Zonal surface stress
+i2x_ix_Fioi_taux: Zonal surface stress
+i2x_ix_Faii_tauy: Meridional surface stress
+i2x_ix_Fioi_tauy: Meridional surface stress
+i2x_ix_Faii_lat: Surface latent heat flux
+i2x_ix_Faii_sen: Sensible heat flux
+i2x_ix_Faii_lwup: Surface upward longwave heat flux
+i2x_ix_Faii_evap: Evaporation water flux
+i2x_ix_Fioi_melth: Heat flux from melting
+i2x_ix_Fioi_meltw: Water flux due to melting
+i2x_ix_PFioi_bergh: Heat flux from melting icebergs
+i2x_ix_PFioi_bergw: Water flux due to melting icebergs
+i2x_ix_Fioi_salt: Salt flux
+i2x_ix_Fioi_bcphi: Hydrophylic black carbon deposition flux
+i2x_ix_Fioi_bcpho: Hydrophobic black carbon deposition flux
+i2x_ix_Fioi_flxdst: Dust flux
+timemgr_rst_nstep_rad_prev: previous_radiation_nstep
+timemgr_rst_type: calendar type
+timemgr_rst_step_sec: seconds component of timestep size
+timemgr_rst_start_ymd: start date
+timemgr_rst_start_tod: start time of day
+timemgr_rst_ref_ymd: reference date
+timemgr_rst_ref_tod: reference time of day
+timemgr_rst_curr_ymd: current date
+timemgr_rst_curr_tod: current time of day
+grid1d_lon: gridcell longitude
+grid1d_lat: gridcell latitude
+grid1d_ixy: 2d longitude index of corresponding gridcell
+grid1d_jxy: 2d latitude index of corresponding gridcell
+topo1d_lon: topounit longitude
+topo1d_lat: topounit latitude
+topo1d_ixy: 2d longitude index of corresponding topounit
+topo1d_jxy: 2d latitude index of corresponding topounit
+topo1d_gridcell_index: gridcell index of corresponding topounit
+land1d_lon: landunit longitude
+land1d_lat: landunit latitude
+land1d_ixy: 2d longitude index of corresponding landunit
+land1d_jxy: 2d latitude index of corresponding landunit
+land1d_gridcell_index: gridcell index of corresponding landunit
+land1d_topounit_index: topounit index of corresponding landunit
+land1d_ityplun: landunit type (see global attributes)
+"land1d_active: landunit active flag (1=active, 0=inactive)"
+cols1d_lon: column longitude
+cols1d_lat: column latitude
+cols1d_ixy: 2d longitude index of corresponding column
+cols1d_jxy: 2d latitude index of corresponding column
+cols1d_gridcell_index: gridcell index of corresponding column
+cols1d_topounit_index: topounit index of corresponding column
+cols1d_landunit_index: landunit index of corresponding column
+cols1d_ityplun: column landunit type (see global attributes)
+cols1d_ityp: column type (see global attributes)
+"cols1d_active: column active flag (1=active, 0=inactive)"
+pfts1d_lon: pft longitude
+pfts1d_lat: pft latitude
+pfts1d_ixy: 2d longitude index of corresponding pft
+pfts1d_jxy: 2d latitude index of corresponding pft
+pfts1d_gridcell_index: gridcell index of corresponding pft
+pfts1d_topounit_index: topounit index of corresponding pft
+pfts1d_landunit_index: landunit index of corresponding pft
+pfts1d_column_index: column index of corresponding pft
+pfts1d_itypveg: pft vegetation type
+pfts1d_itypcol: pft column type (see global attributes)
+pfts1d_ityplun: pft landunit type (see global attributes)
+"pfts1d_active: pft active flag (1=active, 0=inactive)"
+pfts1d_topoglc: mean elevation on glacier elevation classes
+land1d_wtxy: landunit weight relative to corresponding gridcell
+land1d_wttopounit: landunit weight relative to corresponding topounit
+cols1d_wtxy: column weight relative to corresponding gridcell
+cols1d_wtlnd: column weight relative to corresponding landunit
+cols1d_topoglc: mean elevation on glacier elevation classes
+cols1d_wttopounit: column weight relative to corresponding topounit
+pfts1d_wtxy: pft weight relative to corresponding gridcell
+pfts1d_wtlnd: pft weight relative to corresponding landunit
+pfts1d_wtcol: pft weight relative to corresponding column
+pfts1d_wttopounit: pft weight relative to corresponding topounit
+SNLSNO: number of snow layers
+DZSNO: snow layer thickness
+ZSNO: snow layer depth
+ZISNO: snow interface depth
+FSD24_VALUE: 24hr average of direct solar radiation
+FSD24_PERIOD: 
+FSD240_VALUE: 240hr average of direct solar radiation
+FSD240_PERIOD: 
+FSI24_VALUE: 24hr average of diffuse solar radiation
+FSI24_PERIOD: 
+FSI240_VALUE: 240hr average of diffuse solar radiation
+FSI240_PERIOD: 
+FSD24H_VALUE: 24hr average of direct solar radiation
+FSD24H_PERIOD: 
+FSD240H_VALUE: 240hr average of direct solar radiation
+FSD240H_PERIOD: 
+FSI24H_VALUE: 24hr average of diffuse solar radiation
+FSI24H_PERIOD: 
+FSI240H_VALUE: 240hr average of diffuse solar radiation
+FSI240H_PERIOD: 
+T10_VALUE: 10-day running mean of 2-m temperature
+T10_PERIOD: 
+TREFAV_VALUE: average over an hour of 2-m temperature
+TREFAV_PERIOD: 
+TREFAV_U_VALUE: average over an hour of urban 2-m temperature
+TREFAV_U_PERIOD: 
+TREFAV_R_VALUE: average over an hour of rural 2-m temperature
+TREFAV_R_PERIOD: 
+T_VEG24_VALUE: 24hr average of vegetation temperature
+T_VEG24_PERIOD: 
+T_VEG240_VALUE: 240hr average of vegetation temperature
+T_VEG240_PERIOD: 
+FSUN24_VALUE: 24hr average of diffuse solar radiation
+FSUN24_PERIOD: 
+FSUN240_VALUE: 240hr average of diffuse solar radiation
+FSUN240_PERIOD: 
+LAI240_VALUE: 240hr average of leaf area index
+LAI240_PERIOD: 
+nlim_m_VALUE: runing average of N limitation strength
+nlim_m_PERIOD: 
+plim_m_VALUE: runing average of P limitation strength
+plim_m_PERIOD: 
+wlim_m_VALUE: runing average of water limitation strength
+wlim_m_PERIOD: 
+qflx_floodg: flood water flux
+FRAC_VEG_NOSNO_ALB: fraction of vegetation not covered by snow (0 or 1)
+"tlai: one-sided leaf area index, no burying by snow"
+"tsai: one-sided stem area index, no burying by snow"
+"elai: one-sided leaf area index, with burying by snow"
+"esai: one-sided stem area index, with burying by snow"
+htop: canopy top
+hbot: canopy botton
+mlaidiff: difference between lai month one and month two
+fsun: sunlit fraction of canopy
+btran2: 
+eflx_dynbal_amt_to_dribble: total amount to dribble over the year for eflx_dynbal
+URBAN_AC: urban air conditioning flux
+URBAN_HEAT: urban heating flux
+EFLX_LWRAD_OUT: emitted infrared (longwave) radiation
+Z0MG: ground momentum roughness length
+LAKE_ICEFRAC: lake layer ice fraction
+SAVEDTKE1: top lake layer eddy conductivity
+USTLAKE: friction velocity for lakes
+FROST_TABLE: frost table depth (vegetated landunits only)
+WA: water in the unconfined aquifer (vegetated landunits only)
+ZWT: water table depth (vegetated landunits only)
+ZWT_PERCH: perched water table depth (vegetated landunits only)
+sabs_roof_dir: direct solar absorbed by roof per unit ground area per unit incident flux
+sabs_roof_dif: diffuse solar absorbed by roof per unit ground area per unit incident flux
+sabs_sunwall_dir: direct solar absorbed by sunwall per unit wall area per unit incident flux
+sabs_sunwall_dif: diffuse solar absorbed by sunwall per unit wall area per unit incident flux
+sabs_shadewall_dir: direct solar absorbed by shadewall per unit wall area per unit incident flux
+sabs_shadewall_dif: diffuse solar absorbed by shadewall per unit wall area per unit incident flux
+sabs_improad_dir: direct solar absorbed by impervious road per unit ground area per unit incident flux
+sabs_improad_dif: diffuse solar absorbed by impervious road per unit ground area per unit incident flux
+sabs_perroad_dir: direct solar absorbed by pervious road per unit ground area per unit incident flux
+sabs_perroad_dif: diffuse solar absorbed by pervious road per unit ground area per unit incident flux
+qflx_liq_dynbal_amt_to_dribble: total amount to dribble over the year for qflx_liq_dynbal
+qflx_ice_dynbal_amt_to_dribble: total amount to dribble over the year for qflx_ice_dynbal
+qflx_snofrz_lyr: snow layer ice freezing rate
+qflx_snow_melt: net snow melt
+MFLX_SNOW_LYR: mass flux due to disapperance of last snow layer
+n_irrig_steps_left: number of irrigation time steps left
+irrig_rate: irrigation rate
+TS_TOPO: surface radiative temperature
+taf: urban canopy air temperature
+T_SOISNO: soil-snow temperature
+TH2OSFC: surface water temperature
+T_GRND: ground temperature
+T_LAKE: lake temperature
+T_GRND_R: rural ground temperature
+T_GRND_U: urban ground temperature
+T_VEG: vegetation temperature
+T_REF2M: 2m height surface air temperature
+T_REF2M_R: Rural 2m height surface air temperature
+T_REF2M_U: Urban 2m height surface air temperature
+T_REF2M_MIN: daily minimum of average 2 m height surface air temperature (K)
+T_REF2M_MIN_R: rural daily minimum of average 2 m height surface air temperature (K)
+T_REF2M_MIN_U: urban daily minimum of average 2 m height surface air temperature (K)
+T_REF2M_MAX: daily maximum of average 2 m height surface air temperature (K)
+T_REF2M_MAX_R: rural daily maximum of average 2 m height surface air temperature (K)
+T_REF2M_MAX_U: urban daily maximum of average 2 m height surface air temperature (K)
+T_REF2M_MIN_INST: instantaneous daily min of average 2 m height surface air temp (K)
+T_REF2M_MIN_INST_R: rural instantaneous daily min of average 2 m height surface air temp (K)
+T_REF2M_MIN_INST_U: urban instantaneous daily min of average 2 m height surface air temp (K)
+T_REF2M_MAX_INST: instantaneous daily max of average 2 m height surface air temp (K)
+T_REF2M_MAX_INST_R: rural instantaneous daily max of average 2 m height surface air temp (K)
+T_REF2M_MAX_INST_U: urban instantaneous daily max of average 2 m height surface air temp (K)
+TWS_MONTH_BEGIN: total water storage at the beginning of a month
+qaf: urban canopy specific humidity
+H2OSFC: surface water depth
+ENDWB: water balance at end of timestep
+H2OSOI_LIQ: liquid water
+H2OSOI_ICE: ice lens
+SOILP: soil pressure
+H2OSNO: snow depth (liquid water)
+snw_rds: snow layer effective radius
+INT_SNOW: accumulated swe (vegetated landunits only)
+SNOW_DEPTH: snow height of snow covered area
+SNOW_PERS: continuous snow cover time
+frac_sno: fraction of ground covered by snow (0 to 1)
+frac_sno_eff: fraction of ground covered by snow (0 to 1)
+FH2OSFC: fraction of ground covered by surface water
+H2OCAN: intercepted water
+FWET: fraction of canopy that is wet (0 to 1)
+mss_bcpho: snow layer hydrophobic black carbon mass
+mss_bcphi: snow layer hydrophilic black carbon mass
+mss_ocpho: snow layer hydrophobic organic carbon mass
+mss_ocphi: snow layer hydrophilic organic carbon mass
+mss_dst1: snow layer dust species 1 mass
+mss_dst2: snow layer dust species 2 mass
+mss_dst3: snow layer dust species 3 mass
+mss_dst4: snow layer dust species 4 mass
+coszen: No long_name attribute
+albd: surface albedo (direct) (0 to 1)
+albi: surface albedo (diffuse) (0 to 1)
+albgrd: ground albedo (direct) (0 to 1)
+albgri: ground albedo (indirect) (0 to 1)
+albsod: soil albedo (direct) (0 to 1)
+albsoi: soil albedo (indirect) (0 to 1)
+albsnd_hst: snow albedo (direct) (0 to 1)
+albsni_hst: snow albedo (diffuse) (0 to 1)
+tlai_z: tlai increment for canopy layer
+tsai_z: tsai increment for canopy layer
+ncan: number of canopy layers
+"nrad: number of canopy layers, above snow for radiative transfer"
+fsun_z: sunlit fraction for canopy layer
+vcmaxcintsun: sunlit canopy scaling coefficient
+vcmaxcintsha: shaded canopy scaling coefficient
+fabd: flux absorbed by veg per unit direct flux
+fabi: flux absorbed by veg per unit diffuse flux
+fabd_sun: flux absorbed by sunlit leaf per unit direct flux
+fabd_sha: flux absorbed by shaded leaf per unit direct flux
+fabi_sun: flux absorbed by sunlit leaf per unit diffuse flux
+fabi_sha: flux absorbed by shaded leaf per unit diffuse flux
+fabd_sun_z: absorbed sunlit leaf direct PAR (per unit lai+sai) for canopy layer
+fabd_sha_z: absorbed shaded leaf direct PAR (per unit lai+sai) for canopy layer
+fabi_sun_z: absorbed sunlit leaf diffuse PAR (per unit lai+sai) for canopy layer
+fabi_sha_z: absorbed shaded leaf diffuse PAR (per unit lai+sai) for canopy layer
+ftdd: down direct flux below veg per unit direct flux
+ftid: down diffuse flux below veg per unit direct flux
+ftii: down diffuse flux below veg per unit diffuse flux
+fd_top_adjust: sub-grid topographic factor for direct radiation
+fi_top_adjust: sub-grid topographic factor for diffuse radiation
+f_dir: sub-grid topographic factor for direct radiation
+f_rdir: sub-grid topographic factor for reflected-direct radiation
+f_dif: sub-grid topographic factor for diffuse radiation
+f_rdif: sub-grid topographic factor for reflected-diffuse radiation
+"flx_absdv: snow layer flux absorption factors (direct, VIS)"
+"flx_absdn: snow layer flux absorption factors (direct, NIR)"
+"flx_absiv: snow layer flux absorption factors (diffuse, VIS)"
+"flx_absin: snow layer flux absorption factors (diffuse, NIR)"
+locfnh: History filename
+locfnhr: Restart history filename
+budg_fluxG: budg_fluxG
+budg_fluxN: budg_fluxN
+budg_stateG: budg_stateG
+rst_calendar: No long_name attribute
+rst_nstep: No long_name attribute
+rst_step_days: No long_name attribute
+rst_step_sec: No long_name attribute
+rst_start_ymd: No long_name attribute
+rst_start_tod: No long_name attribute
+rst_stop_ymd: No long_name attribute
+rst_stop_tod: No long_name attribute
+rst_ref_ymd: No long_name attribute
+rst_ref_tod: No long_name attribute
+rst_curr_ymd: No long_name attribute
+rst_curr_tod: No long_name attribute
+rst_perp_ymd: No long_name attribute
+rst_perp_cal_int: No long_name attribute
+VTheta_dp: No long_name attribute
+OMEGA: Vertical velocity (pressure)
+PS: Surface pressure
+PHIS: Surface geopotential
+dpQ: No long_name attribute
+dpCLDLIQ: No long_name attribute
+dpCLDICE: No long_name attribute
+dpNUMLIQ: No long_name attribute
+dpNUMICE: No long_name attribute
+dpRAINQM: No long_name attribute
+dpSNOWQM: No long_name attribute
+dpNUMRAI: No long_name attribute
+dpNUMSNO: No long_name attribute
+static_ener_ac: No long_name attribute
+water_vap_ac: No long_name attribute
+vmag_gust: No long_name attribute
+TEOUT: No long_name attribute
+DTCORE: No long_name attribute
+TAUX: Zonal surface stress
+TAUY: Meridional surface stress
+QFLX: Surface water flux
+LHFLX_RES: No long_name attribute
+SHFLX_RES: No long_name attribute
+TAUX_RES: No long_name attribute
+TAUY_RES: No long_name attribute
+QFLX_RES: No long_name attribute
+DGNUM: No long_name attribute
+DGNUMWET: No long_name attribute
+CRM_U: No long_name attribute
+CRM_V: No long_name attribute
+CRM_W: No long_name attribute
+CRM_T: No long_name attribute
+CRM_RHO: No long_name attribute
+CRM_QRAD: No long_name attribute
+CLDO: No long_name attribute
+CLD: No long_name attribute
+CONCLD: No long_name attribute
+CRM_QV: No long_name attribute
+CRM_QP: No long_name attribute
+CRM_QN: No long_name attribute
+ACLDY_CEN: No long_name attribute
+CRM_ANGLE: No long_name attribute
+PRER_EVAP: No long_name attribute
+cush: No long_name attribute
+AST: No long_name attribute
+QRS: Solar heating rate
+QRL: Longwave heating rate
+ICIWP: No long_name attribute
+ICLWP: No long_name attribute
+pblh: No long_name attribute
+tke: No long_name attribute
+kvh: No long_name attribute
+kvm: No long_name attribute
+turbtype: No long_name attribute
+smaw: No long_name attribute
+tauresx: No long_name attribute
+tauresy: No long_name attribute
+tpert: No long_name attribute
+qpert: No long_name attribute
+T_TTEND: No long_name attribute
+FRONTGF: No long_name attribute
+FRONTGA: No long_name attribute
+pbuf_time_idx: No long_name attribute
+prescribed_ozone_curr_fname: No long_name attribute
+prescraero_randn_seed: No long_name attribute
+prescribed_aero_curr_fname: No long_name attribute
+SGH: No long_name attribute
+SGH30: No long_name attribute
+TREFMXAV: daily maximum of average 2-m temperature
+TREFMNAV: daily minimum of average 2-m temperature
+FLWDS: No long_name attribute
+SOLS: No long_name attribute
+SOLL: No long_name attribute
+SOLSD: No long_name attribute
+SOLLD: No long_name attribute
+BCPHIDRY: No long_name attribute
+BCPHODRY: No long_name attribute
+OCPHIDRY: No long_name attribute
+OCPHODRY: No long_name attribute
+DSTDRY1: No long_name attribute
+DSTDRY2: No long_name attribute
+DSTDRY3: No long_name attribute
+DSTDRY4: No long_name attribute
+CFLX0001: No long_name attribute
+CFLX0002: No long_name attribute
+CFLX0003: No long_name attribute
+CFLX0004: No long_name attribute
+CFLX0005: No long_name attribute
+CFLX0006: No long_name attribute
+CFLX0007: No long_name attribute
+CFLX0008: No long_name attribute
+CFLX0009: No long_name attribute
+LHF: No long_name attribute
+SHF: No long_name attribute
+rgnht: No long_name attribute
+nhtfrq: Frequency of history writes
+nflds: Number of fields on file
+nfils: No long_name attribute
+mfilt: Number of history time samples on a file
+nfpath: No long_name attribute
+cpath: No long_name attribute
+nhfil: No long_name attribute
+ndens: No long_name attribute
+fincllonlat: No long_name attribute
+ncprec: Flag for data precision
+beg_time: No long_name attribute
+fincl: Fieldnames to include
+fexcl: Fieldnames to exclude
+field_name: No long_name attribute
+decomp_type: No long_name attribute
+numlev: No long_name attribute
+hrestpath: No long_name attribute
+hwrt_prec: No long_name attribute
+avgflag: Averaging flag
+sampling_seq: No long_name attribute
+long_name: Long descriptive names for fields
+standard_name: No long_name attribute
+units: Units for each history field output
+xyfill: No long_name attribute
+lcltod_start: No long_name attribute
+lcltod_stop: No long_name attribute
+fillvalue: No long_name attribute
+mdims: No long_name attribute
+mdimnames: mdim dimension names
+is_subcol: No long_name attribute
+interpolate_output: No long_name attribute
+interpolate_type: No long_name attribute
+interpolate_gridtype: No long_name attribute
+interpolate_nlat: No long_name attribute
+interpolate_nlon: No long_name attribute
+meridional_complement: No long_name attribute
+zonal_complement: No long_name attribute
+AEROD_v: Total Aerosol Optical Depth in visible band
+AEROD_v_nacs: No long_name attribute
+AODABS: Aerosol absorption optical depth 550 nm
+AODABS_nacs: No long_name attribute
+AODABSBC: Aerosol absorption optical depth 550 nm from BC
+AODABSBC_nacs: No long_name attribute
+AODALL: AOD 550 nm for all time and species
+AODALL_nacs: No long_name attribute
+AODBC: Aerosol optical depth 550 nm from BC
+AODBC_nacs: No long_name attribute
+AODDUST: Aerosol optical depth 550 nm from dust
+AODDUST_nacs: No long_name attribute
+AODDUST1: Aerosol optical depth 550 nm model 1 from dust
+AODDUST1_nacs: No long_name attribute
+AODDUST3: Aerosol optical depth 550 nm model 3 from dust
+AODDUST3_nacs: No long_name attribute
+AODMODE1: Aerosol optical depth 550 nm mode 1
+AODMODE1_nacs: No long_name attribute
+AODMODE2: Aerosol optical depth 550 nm mode 2
+AODMODE2_nacs: No long_name attribute
+AODMODE3: Aerosol optical depth 550 nm mode 3
+AODMODE3_nacs: No long_name attribute
+AODNIR: Aerosol optical depth 850 nm
+AODNIR_nacs: No long_name attribute
+AODPOM: Aerosol optical depth 550 nm from POM
+AODPOM_nacs: No long_name attribute
+AODSO4: Aerosol optical depth 550 nm from SO4
+AODSO4_nacs: No long_name attribute
+AODSOA: Aerosol optical depth 550 nm from SOA
+AODSOA_nacs: No long_name attribute
+AODSS: Aerosol optical depth 550 nm from seasalt
+AODSS_nacs: No long_name attribute
+AODUV: Aerosol optical depth 350 nm
+AODUV_nacs: No long_name attribute
+AODVIS: Aerosol optical depth 550 nm
+AODVIS_nacs: No long_name attribute
+BURDEN1: Aerosol burden mode 1
+BURDEN1_nacs: No long_name attribute
+BURDEN2: Aerosol burden mode 2
+BURDEN2_nacs: No long_name attribute
+BURDEN3: Aerosol burden mode 3
+BURDEN3_nacs: No long_name attribute
+CCN3: CCN concentration at S=0.1%
+CCN3_nacs: No long_name attribute
+CLDHGH_nacs: No long_name attribute
+CLDICE_nacs: No long_name attribute
+CLDLIQ_nacs: No long_name attribute
+CLDLOW_nacs: No long_name attribute
+CLDMED_nacs: No long_name attribute
+CLDTOT_nacs: No long_name attribute
+CLOUD_nacs: No long_name attribute
+DCQ: Q tendency due to moist processes
+DCQ_nacs: No long_name attribute
+DQ1PHYS_nacs: No long_name attribute
+DQ2PHYS_nacs: No long_name attribute
+DQ3PHYS_nacs: No long_name attribute
+DTCOND: T tendency - moist processes
+DTCOND_nacs: No long_name attribute
+DTENDTH: Dynamic Tendency of Total (vertically integrated) moist static energy
+DTENDTH_nacs: No long_name attribute
+DTENDTQ: Dynamic Tendency of Total (vertically integrated) specific humidity
+DTENDTQ_nacs: No long_name attribute
+DTPHYS_nacs: No long_name attribute
+DTV: T vertical diffusion
+DTV_nacs: No long_name attribute
+DUPHYS_nacs: No long_name attribute
+EXTINCT: Aerosol extinction
+EXTINCT_nacs: No long_name attribute
+FLDS: Downwelling longwave flux at surface
+FLDS_nacs: No long_name attribute
+FLNS: Net longwave flux at surface
+FLNS_nacs: No long_name attribute
+FLNSC: Clearsky net longwave flux at surface
+FLNSC_nacs: No long_name attribute
+FLNT: Net longwave flux at top of model
+FLNT_nacs: No long_name attribute
+FLNTC: Clearsky net longwave flux at top of model
+FLNTC_nacs: No long_name attribute
+FLUT_nacs: No long_name attribute
+FLUTC: Clearsky upwelling longwave flux at top of model
+FLUTC_nacs: No long_name attribute
+FSDS: Downwelling solar flux at surface
+FSDS_nacs: No long_name attribute
+FSDSC: Clearsky downwelling solar flux at surface
+FSDSC_nacs: No long_name attribute
+FSNS: Net solar flux at surface
+FSNS_nacs: No long_name attribute
+FSNSC: Clearsky net solar flux at surface
+FSNSC_nacs: No long_name attribute
+FSNT: Net solar flux at top of model
+FSNT_nacs: No long_name attribute
+FSNTC: Clearsky net solar flux at top of model
+FSNTC_nacs: No long_name attribute
+FSNTOA: Net solar flux at top of atmosphere
+FSNTOA_nacs: No long_name attribute
+FSNTOAC: Clearsky net solar flux at top of atmosphere
+FSNTOAC_nacs: No long_name attribute
+FSUTOA: Upwelling solar flux at top of atmosphere
+FSUTOA_nacs: No long_name attribute
+FSUTOAC: Clearsky upwelling solar flux at top of atmosphere
+FSUTOAC_nacs: No long_name attribute
+ICEFRAC: Fraction of sfc area covered by sea-ice
+ICEFRAC_nacs: No long_name attribute
+LANDFRAC: Fraction of sfc area covered by land
+LANDFRAC_nacs: No long_name attribute
+LHFLX_nacs: No long_name attribute
+LWCF_nacs: No long_name attribute
+MMF_DQ: Q tendency due to CRM
+MMF_DQ_nacs: No long_name attribute
+MMF_DQC: QC tendency due to CRM
+MMF_DQC_nacs: No long_name attribute
+MMF_DQI: QI tendency due to CRM
+MMF_DQI_nacs: No long_name attribute
+MMF_DT: T tendency due to CRM
+MMF_DT_nacs: No long_name attribute
+MMF_MC: Total mass flux from CRM
+MMF_MC_nacs: No long_name attribute
+MMF_MCDN: Downdraft mass flux from CRM
+MMF_MCDN_nacs: No long_name attribute
+MMF_MCUDN: Unsaturated downdraft mass flux from CRM
+MMF_MCUDN_nacs: No long_name attribute
+MMF_MCUP: Updraft mass flux from CRM
+MMF_MCUP_nacs: No long_name attribute
+MMF_MCUUP: Unsaturated updraft mass flux from CRM
+MMF_MCUUP_nacs: No long_name attribute
+MMF_QTLS: L.S. Total Water Forcing in CRM
+MMF_QTLS_nacs: No long_name attribute
+MMF_SUBCYCLE_FAC: CRM subcycle ratio: 1.0 = no subcycling
+MMF_SUBCYCLE_FAC_nacs: No long_name attribute
+MMF_TK: SGS TK in CRM
+MMF_TK_nacs: No long_name attribute
+MMF_TKE: Total TKE in CRM
+MMF_TKE_nacs: No long_name attribute
+MMF_TKES: SGS TKE in CRM
+MMF_TKES_nacs: No long_name attribute
+MMF_TLS: L.S. Temperature Forcing in CRM
+MMF_TLS_nacs: No long_name attribute
+OCNFRAC: Fraction of sfc area covered by ocean
+OCNFRAC_nacs: No long_name attribute
+OMEGA_nacs: No long_name attribute
+OMEGA500: Vertical velocity at 500 mbar pressure surface
+OMEGA500_nacs: No long_name attribute
+OMEGAT: Vertical heat flux
+OMEGAT_nacs: No long_name attribute
+PBLH: PBL height
+PBLH_nacs: No long_name attribute
+PHIS_nacs: No long_name attribute
+PRECC_nacs: No long_name attribute
+PRECL: Large-scale (stable) precipitation rate (liq + ice)
+PRECL_nacs: No long_name attribute
+PRECSC: Convective snow rate (water equivalent)
+PRECSC_nacs: No long_name attribute
+PRECSL: Large-scale (stable) snow rate (water equivalent)
+PRECSL_nacs: No long_name attribute
+PS_nacs: No long_name attribute
+PSL: Sea level pressure
+PSL_nacs: No long_name attribute
+Q_nacs: No long_name attribute
+QFLX_nacs: No long_name attribute
+QREFHT: Reference height humidity
+QREFHT_nacs: No long_name attribute
+QRL_nacs: No long_name attribute
+QRS_nacs: No long_name attribute
+RELHUM: Relative humidity
+RELHUM_nacs: No long_name attribute
+SHFLX_nacs: No long_name attribute
+SNOWHICE: Snow depth over ice
+SNOWHICE_nacs: No long_name attribute
+SNOWHLND: Water equivalent snow depth
+SNOWHLND_nacs: No long_name attribute
+SOLIN: Solar insolation
+SOLIN_nacs: No long_name attribute
+SSAVIS: Aerosol singel-scatter albedo
+SSAVIS_nacs: No long_name attribute
+SWCF_nacs: No long_name attribute
+T_nacs: No long_name attribute
+TAUGWX: Zonal gravity wave surface stress
+TAUGWX_nacs: No long_name attribute
+TAUGWY: Meridional gravity wave surface stress
+TAUGWY_nacs: No long_name attribute
+TAUX_nacs: No long_name attribute
+TAUY_nacs: No long_name attribute
+TGCLDCWP: Total grid-box cloud water path (liquid and ice)
+TGCLDCWP_nacs: No long_name attribute
+TGCLDIWP: Total grid-box cloud ice water path
+TGCLDIWP_nacs: No long_name attribute
+TGCLDLWP: Total grid-box cloud liquid water path
+TGCLDLWP_nacs: No long_name attribute
+TH7001000: Theta difference 700 mb - 1000 mb
+TH7001000_nacs: No long_name attribute
+TMQ_nacs: No long_name attribute
+TOT_CLD_VISTAU: Total gridbox cloud visible optical depth
+TOT_CLD_VISTAU_nacs: No long_name attribute
+TOT_ICLD_VISTAU: Total in-cloud visible optical depth
+TOT_ICLD_VISTAU_nacs: No long_name attribute
+TREFHT: Reference height temperature
+TREFHT_nacs: No long_name attribute
+TROP_P: Tropopause Pressure
+TROP_P_nacs: No long_name attribute
+TROP_T: Tropopause Temperature
+TROP_T_nacs: No long_name attribute
+TS: Surface temperature (radiative)
+TS_nacs: No long_name attribute
+TSMN: Minimum surface temperature over output period
+TSMN_nacs: No long_name attribute
+TSMX: Maximum surface temperature over output period
+TSMX_nacs: No long_name attribute
+TUH: Total (vertically integrated) zonal MSE flux
+TUH_nacs: No long_name attribute
+TUQ: Total (vertically integrated) zonal water flux
+TUQ_nacs: No long_name attribute
+TVH: Total (vertically integrated) meridional MSE flux
+TVH_nacs: No long_name attribute
+TVQ: Total (vertically integrated) meridional water flux
+TVQ_nacs: No long_name attribute
+U_nacs: No long_name attribute
+U10: 10m wind speed
+U10_nacs: No long_name attribute
+UU: Zonal velocity squared
+UU_nacs: No long_name attribute
+V_nacs: No long_name attribute
+VD01: Vertical diffusion of Q
+VD01_nacs: No long_name attribute
+VQ: Meridional water transport
+VQ_nacs: No long_name attribute
+VT: Meridional heat transport
+VT_nacs: No long_name attribute
+VU: Meridional flux of zonal momentum
+VU_nacs: No long_name attribute
+VV: Meridional velocity squared
+VV_nacs: No long_name attribute
+Z3: Geopotential Height (above sea level)
+Z3_nacs: No long_name attribute
+aero_water: sum of aerosol water of interstitial modes wat_a1+wat_a2+wat_a3+wat_a4
+aero_water_nacs: No long_name attribute
+hstobie_linoz: Lowest possible Linoz level
+hstobie_linoz_nacs: No long_name attribute
+aicen: No long_name attribute
+vicen: No long_name attribute
+vsnon: No long_name attribute
+Tsfcn: No long_name attribute
+volpn: No long_name attribute
+apondn: No long_name attribute
+hpondn: No long_name attribute
+eicen: No long_name attribute
+esnon: No long_name attribute
+uvel: No long_name attribute
+vvel: No long_name attribute
+scale_factor: No long_name attribute
+swvdr: No long_name attribute
+swvdf: No long_name attribute
+swidr: No long_name attribute
+swidf: No long_name attribute
+strocnxT: No long_name attribute
+strocnyT: No long_name attribute
+stressp_1: No long_name attribute
+stressp_2: No long_name attribute
+stressp_3: No long_name attribute
+stressp_4: No long_name attribute
+stressm_1: No long_name attribute
+stressm_2: No long_name attribute
+stressm_3: No long_name attribute
+stressm_4: No long_name attribute
+stress12_1: No long_name attribute
+stress12_2: No long_name attribute
+stress12_3: No long_name attribute
+stress12_4: No long_name attribute
+iceumask: No long_name attribute
+levgrnd: coordinate soil levels
+levlak: coordinate lake levels
+levdcmp: coordinate soil levels
+levsoi: coordinate soil levels (equivalent to top nlevsoi levels of levgrnd)
+mcdate: current date (YYYYMMDD)
+mcsec: current seconds of current date
+mdcur: current day (from base day)
+mscur: current seconds of current day
+nstep: time step
+time_bounds: boundaries for time-averaging interval
+topo: grid cell topography
+landfrac: land fraction
+landmask: land/ocean mask (0.=ocean and 1.=land)
+pftmask: pft real/fake mask (0.=fake and 1.=real)
+BCDEP: total BC deposition (dry+wet) from atmosphere
+BTRAN: transpiration beta factor
+BUILDHEAT: heat flux from urban building interior to walls and roof
+DEFICIT: runoff supply deficit
+DSTDEP: total dust deposition (dry+wet) from atmosphere
+DSTFLXT: total surface dust emission
+DWB: net change in total water mass
+EFLX_DYNBAL: dynamic land cover change conversion energy flux
+"EFLX_GRND_LAKE: net heat flux into lake/snow surface, excluding light transmissi"
+EFLX_LH_TOT: total latent heat flux [+ to atm]
+EFLX_LH_TOT_R: Rural total evaporation
+EFLX_LH_TOT_U: Urban total evaporation
+ELAI: exposed one-sided leaf area index
+ERRH2O: total water conservation error
+ERRH2OSNO: imbalance in snow depth (liquid water)
+ERRSEB: surface energy conservation error
+ERRSOI: soil/lake energy conservation error
+ERRSOL: solar radiation conservation error
+ESAI: exposed one-sided stem area index
+FCEV: canopy evaporation
+FCOV: fractional impermeable area
+FCTR: canopy transpiration
+FGEV: ground evaporation
+FGR: heat flux into soil/snow including snow melt and lake / snow lig
+FGR12: heat flux between soil layers 1 and 2
+FGR_R: Rural heat flux into soil/snow including snow melt and snow ligh
+FGR_U: Urban heat flux into soil/snow including snow melt
+FIRA: net infrared (longwave) radiation
+FIRA_R: Rural net infrared (longwave) radiation
+FIRA_U: Urban net infrared (longwave) radiation
+FIRE: emitted infrared (longwave) radiation
+FIRE_R: Rural emitted infrared (longwave) radiation
+FIRE_U: Urban emitted infrared (longwave) radiation
+FPSN: photosynthesis
+FPSN_WC: Rubisco-limited photosynthesis
+FPSN_WJ: RuBP-limited photosynthesis
+FPSN_WP: Product-limited photosynthesis
+FSA: absorbed solar radiation
+FSAT: fractional area with water table at surface
+FSA_R: Rural absorbed solar radiation
+FSA_U: Urban absorbed solar radiation
+FSDSND: direct nir incident solar radiation
+FSDSNDLN: direct nir incident solar radiation at local noon
+FSDSNI: diffuse nir incident solar radiation
+FSDSVD: direct vis incident solar radiation
+FSDSVDLN: direct vis incident solar radiation at local noon
+FSDSVI: diffuse vis incident solar radiation
+FSDSVILN: diffuse vis incident solar radiation at local noon
+FSH: sensible heat
+FSH_G: sensible heat from ground
+FSH_NODYNLNDUSE: sensible heat not including correction for land use change
+FSH_R: Rural sensible heat
+FSH_U: Urban sensible heat
+FSH_V: sensible heat from veg
+FSM: snow melt heat flux
+FSM_R: Rural snow melt heat flux
+FSM_U: Urban snow melt heat flux
+FSNO: fraction of ground covered by snow
+FSNO_EFF: effective fraction of ground covered by snow
+FSR: reflected solar radiation
+FSRND: direct nir reflected solar radiation
+FSRNDLN: direct nir reflected solar radiation at local noon
+FSRNI: diffuse nir reflected solar radiation
+FSRVD: direct vis reflected solar radiation
+FSRVDLN: direct vis reflected solar radiation at local noon
+FSRVI: diffuse vis reflected solar radiation
+GC_HEAT1: initial gridcell total heat content
+GC_ICE1: initial gridcell total ice content
+GC_LIQ1: initial gridcell total liq content
+H2OSNO_TOP: mass of snow in top snow layer
+H2OSOI: volumetric soil water (vegetated landunits only)
+HC: heat content of soil/snow/lake
+HCSOI: soil heat content
+HEAT_FROM_AC: sensible heat flux put into canyon due to heat removed from air
+LAISHA: shaded projected leaf area index
+LAISUN: sunlit projected leaf area index
+LAKEICEFRAC: lake layer ice mass fraction
+LAKEICETHICK: thickness of lake ice (including physical expansion on freezing)
+OCDEP: total OC deposition (dry+wet) from atmosphere
+PARVEGLN: absorbed par by vegetation at local noon
+PBOT: atmospheric pressure
+PCO2: atmospheric partial pressure of CO2
+PCT_LANDUNIT: % of each landunit on topounit
+"PCT_NAT_PFT: % of each PFT on the natural vegetation (i.e., soil) landunit"
+Q2M: 2m specific humidity
+QBOT: atmospheric specific humidity
+QCHARGE: aquifer recharge rate (vegetated landunits only)
+QDRAI: sub-surface drainage
+QDRAI_PERCH: perched wt drainage
+QDRAI_XS: saturation excess drainage
+QDRIP: throughfall
+QFLOOD: runoff from river flooding
+QFLX_ICE_DYNBAL: ice dynamic land cover change conversion runoff flux
+QFLX_LIQ_DYNBAL: liq dynamic land cover change conversion runoff flux
+QH2OSFC: surface water runoff
+QINFL: infiltration
+QINTR: interception
+QIRRIG_GRND: Groundwater irrigation
+QIRRIG_ORIG: Original total irrigation water demand (surface + ground)
+QIRRIG_REAL: actual water added through irrigation (surface + ground)
+QIRRIG_SURF: Surface water irrigation
+QIRRIG_WM: Surface water irrigation demand sent to MOSART/WM
+QOVER: surface runoff
+"QRGWL: surface runoff at glaciers (liquid only), wetlands, lakes"
+QRUNOFF: total liquid runoff (does not include QSNWCPICE)
+QRUNOFF_NODYNLNDUSE: total liquid runoff (does not include QSNWCPICE) not including c
+QRUNOFF_R: Rural total runoff
+QRUNOFF_U: Urban total runoff
+QSNOMELT: snow melt
+QSNWCPICE: excess snowfall due to snow capping
+QSNWCPICE_NODYNLNDUSE: excess snowfall due to snow capping not including correction for
+QSOIL: Ground evaporation (soil/snow evaporation + soil/snow sublimatio
+QVEGE: canopy evaporation
+QVEGT: canopy transpiration
+RAIN: atmospheric rain
+RH2M: 2m relative humidity
+RH2M_R: Rural 2m specific humidity
+RH2M_U: Urban 2m relative humidity
+SABG: solar rad absorbed by ground
+SABG_PEN: Rural solar rad penetrating top soil or snow layer
+SABV: solar rad absorbed by veg
+SNOBCMCL: mass of BC in snow column
+SNOBCMSL: mass of BC in top snow layer
+SNODSTMCL: mass of dust in snow column
+SNODSTMSL: mass of dust in top snow layer
+SNOINTABS: Percent of incoming solar absorbed by lower snow layers
+SNOOCMCL: mass of OC in snow column
+SNOOCMSL: mass of OC in top snow layer
+SNOW: atmospheric snow
+SNOWDP: gridcell mean snow height
+SNOWICE: snow ice
+SNOWLIQ: snow liquid water
+SNOW_SINKS: snow sinks (liquid water)
+SNOW_SOURCES: snow sources (liquid water)
+SOILICE: soil ice (vegetated landunits only)
+SOILICE_ICE: soil ice (ice landunits only)
+SOILLIQ: soil liquid water (vegetated landunits only)
+SOILLIQ_ICE: soil liquid water (ice landunits only)
+SOILWATER_10CM: soil liquid water + ice in top 10cm of soil (veg landunits only)
+SUPPLY: runoff supply for land use
+SoilAlpha: factor limiting ground evap
+SoilAlpha_U: urban factor limiting ground evap
+TBOT: atmospheric air temperature
+TBUILD: internal urban building temperature
+TG: ground temperature
+TG_R: Rural ground temperature
+TG_U: Urban ground temperature
+THBOT: atmospheric air potential temperature
+TKE1: top lake level eddy thermal conductivity
+TLAI: total projected leaf area index
+TLAKE: lake temperature
+TREFMNAV_R: Rural daily minimum of average 2-m temperature
+TREFMNAV_U: Urban daily minimum of average 2-m temperature
+TREFMXAV_R: Rural daily maximum of average 2-m temperature
+TREFMXAV_U: Urban daily maximum of average 2-m temperature
+TSA: 2m air temperature
+TSAI: total projected stem area index
+TSA_R: Rural 2m air temperature
+TSA_U: Urban 2m air temperature
+TSOI: soil temperature (vegetated landunits only)
+TSOI_10CM: soil temperature in top 10cm of soil
+TSOI_ICE: soil temperature (ice landunits only)
+TV: vegetation temperature
+TWS: total water storage
+TWS_MONTH_END: total water storage at the end of a month
+U10WITHGUSTS: 10-m wind with gustiness enhancement included
+VOLR: river channel total water storage
+VOLRMCH: river channel main channel water storage
+WASTEHEAT: sensible heat flux from heating/cooling sources of urban waste h
+WIND: atmospheric wind velocity magnitude
+ZBOT: atmospheric reference height
+TLON: T grid center longitude
+TLAT: T grid center latitude
+ULON: U grid center longitude
+ULAT: U grid center latitude
+tmask: mask of T grid cells
+tarea: area of T grid cells
+uarea: area of U grid cells
+dxt: T cell width through middle
+dyt: T cell height through middle
+dxu: U cell width through middle
+dyu: U cell height through middle
+HTN: T cell width on North side
+HTE: T cell width on East side
+ANGLE: angle grid makes with latitude line on U grid
+ANGLET: angle grid makes with latitude line on T grid
+blkmask: blockid of T grid cells
+lont_bounds: longitude boundaries of T cells
+latt_bounds: latitude boundaries of T cells
+lonu_bounds: longitude boundaries of U cells
+latu_bounds: latitude boundaries of U cells
+hi: grid cell mean ice thickness
+hs: grid cell mean snow thickness
+fs: grid cell mean snow fraction
+Tsfc: snow/ice surface temperature
+aice: ice area  (aggregate)
+qi: internal ice heat content
+qs: internal snow heat content
+transix: ice mass transport (x) on East side
+transiy: ice mass transport (y) on North side
+fswdn: down solar flux
+fswup: upward solar flux
+flwdn: down longwave flux
+snow: snowfall rate (cpl)
+snow_ai: snowfall rate
+rain: rainfall rate (cpl)
+rain_ai: rainfall rate
+fswfac: shortwave scaling factor
+fswabs: snow/ice/ocn absorbed solar flux (cpl)
+fswabs_ai: snow/ice/ocn absorbed solar flux
+alvdr: visible direct albedo
+alidr: near IR direct albedo
+alvdf: visible diffuse albedo
+alidf: near IR diffuse albedo
+flat: latent heat flux (cpl)
+flat_ai: latent heat flux
+fsens: sensible heat flux (cpl)
+fsens_ai: sensible heat flux
+flwup: upward longwave flux (cpl)
+flwup_ai: upward longwave flux
+evap: evaporative water flux (cpl)
+evap_ai: evaporative water flux
+Tair: air temperature
+Tref: 2m reference temperature
+Qref: 2m reference specific humidity
+melts: snow melt
+fswthru: SW thru ice to ocean (cpl)
+fswthru_ai: SW flux thru ice to ocean
+dardg1dt: ice area ridging rate
+dardg2dt: ridge area formation rate
+dvirdgdt: ice volume ridging rate
+hisnap: ice volume snapshot
+aisnap: ice area snapshot
+trsig: internal stress tensor trace
+ice_present: fraction of time-avg interval that any ice is present
+fsurf_ai: net surface heat flux
+fcondtop_ai: top surface conductive heat flux
+x2a_Sf_lfrac: No long_name attribute
+x2a_Sf_ifrac: No long_name attribute
+x2a_Sf_ofrac: No long_name attribute
+x2a_Sx_avsdr: No long_name attribute
+x2a_Sx_anidr: No long_name attribute
+x2a_Sx_avsdf: No long_name attribute
+x2a_Sx_anidf: No long_name attribute
+x2a_Sx_tref: No long_name attribute
+x2a_Sx_qref: No long_name attribute
+x2a_So_t: No long_name attribute
+x2a_Sx_t: No long_name attribute
+x2a_Sl_fv: No long_name attribute
+x2a_Sl_ram1: No long_name attribute
+x2a_Sl_snowh: No long_name attribute
+x2a_Si_snowh: No long_name attribute
+x2a_So_ssq: No long_name attribute
+x2a_So_re: No long_name attribute
+x2a_Sx_u10: No long_name attribute
+x2a_Sx_u10withgusts: No long_name attribute
+x2a_So_ustar: No long_name attribute
+x2a_Faxx_taux: No long_name attribute
+x2a_Faxx_tauy: No long_name attribute
+x2a_Faxx_lat: No long_name attribute
+x2a_Faxx_sen: No long_name attribute
+x2a_Faxx_lwup: No long_name attribute
+x2a_Faxx_evap: No long_name attribute
+x2a_Fall_flxdst1: No long_name attribute
+x2a_Fall_flxdst2: No long_name attribute
+x2a_Fall_flxdst3: No long_name attribute
+x2a_Fall_flxdst4: No long_name attribute
+x2a_Faoo_h2otemp: No long_name attribute
+a2x_Sa_z: No long_name attribute
+a2x_Sa_topo: No long_name attribute
+a2x_Sa_u: No long_name attribute
+a2x_Sa_v: No long_name attribute
+a2x_Sa_ugust: No long_name attribute
+a2x_Sa_tbot: No long_name attribute
+a2x_Sa_ptem: No long_name attribute
+a2x_Sa_shum: No long_name attribute
+a2x_Sa_pbot: No long_name attribute
+a2x_Sa_dens: No long_name attribute
+a2x_Sa_uovern: No long_name attribute
+a2x_Sa_pslv: No long_name attribute
+a2x_Sa_co2prog: No long_name attribute
+a2x_Sa_co2diag: No long_name attribute
+a2x_Faxa_rainc: No long_name attribute
+a2x_Faxa_rainl: No long_name attribute
+a2x_Faxa_snowc: No long_name attribute
+a2x_Faxa_snowl: No long_name attribute
+a2x_Faxa_lwdn: No long_name attribute
+a2x_Faxa_swndr: No long_name attribute
+a2x_Faxa_swvdr: No long_name attribute
+a2x_Faxa_swndf: No long_name attribute
+a2x_Faxa_swvdf: No long_name attribute
+a2x_Faxa_swnet: No long_name attribute
+a2x_Faxa_bcphidry: No long_name attribute
+a2x_Faxa_bcphodry: No long_name attribute
+a2x_Faxa_bcphiwet: No long_name attribute
+a2x_Faxa_ocphidry: No long_name attribute
+a2x_Faxa_ocphodry: No long_name attribute
+a2x_Faxa_ocphiwet: No long_name attribute
+a2x_Faxa_dstwet1: No long_name attribute
+a2x_Faxa_dstwet2: No long_name attribute
+a2x_Faxa_dstwet3: No long_name attribute
+a2x_Faxa_dstwet4: No long_name attribute
+a2x_Faxa_dstdry1: No long_name attribute
+a2x_Faxa_dstdry2: No long_name attribute
+a2x_Faxa_dstdry3: No long_name attribute
+a2x_Faxa_dstdry4: No long_name attribute
+lat_d: latitude
+lon_d: longitude
+area_d: gll grid areas
+NUMICE: Grid box averaged cld ice number
+NUMLIQ: Grid box averaged cld liquid number
+NUMRAI: Grid box averaged rain number
+NUMSNO: Grid box averaged snow number
+RAINQM: Grid box averaged rain amount
+SICTHK: Sea ice thickness
+SNOWQM: Grid box averaged snow amount
+TS1: TS1      subsoil temperature
+TS2: TS2      subsoil temperature
+TS3: TS3      subsoil temperature
+TS4: TS4      subsoil temperature
+TSICE: Ice temperature
+BCDEP_acc: total BC deposition (dry+wet) from atmosphere accumulator number of samples
+BTRAN_acc: transpiration beta factor accumulator number of samples
+BUILDHEAT_acc: heat flux from urban building interior to walls and roof accumulator number of samples
+DEFICIT_acc: runoff supply deficit accumulator number of samples
+DSTDEP_acc: total dust deposition (dry+wet) from atmosphere accumulator number of samples
+DSTFLXT_acc: total surface dust emission accumulator number of samples
+DWB_acc: net change in total water mass accumulator number of samples
+EFLX_DYNBAL_acc: dynamic land cover change conversion energy flux accumulator number of samples
+"EFLX_GRND_LAKE_acc: net heat flux into lake/snow surface, excluding light transmissi accumulator number of samples"
+EFLX_LH_TOT_acc: total latent heat flux [+ to atm] accumulator number of samples
+EFLX_LH_TOT_R_acc: Rural total evaporation accumulator number of samples
+EFLX_LH_TOT_U_acc: Urban total evaporation accumulator number of samples
+ELAI_acc: exposed one-sided leaf area index accumulator number of samples
+ERRH2O_acc: total water conservation error accumulator number of samples
+ERRH2OSNO_acc: imbalance in snow depth (liquid water) accumulator number of samples
+ERRSEB_acc: surface energy conservation error accumulator number of samples
+ERRSOI_acc: soil/lake energy conservation error accumulator number of samples
+ERRSOL_acc: solar radiation conservation error accumulator number of samples
+ESAI_acc: exposed one-sided stem area index accumulator number of samples
+FCEV_acc: canopy evaporation accumulator number of samples
+FCOV_acc: fractional impermeable area accumulator number of samples
+FCTR_acc: canopy transpiration accumulator number of samples
+FGEV_acc: ground evaporation accumulator number of samples
+FGR_acc: heat flux into soil/snow including snow melt and lake / snow lig accumulator number of samples
+FGR12_acc: heat flux between soil layers 1 and 2 accumulator number of samples
+FGR_R_acc: Rural heat flux into soil/snow including snow melt and snow ligh accumulator number of samples
+FGR_U_acc: Urban heat flux into soil/snow including snow melt accumulator number of samples
+FH2OSFC_acc: fraction of ground covered by surface water accumulator number of samples
+FIRA_acc: net infrared (longwave) radiation accumulator number of samples
+FIRA_R_acc: Rural net infrared (longwave) radiation accumulator number of samples
+FIRA_U_acc: Urban net infrared (longwave) radiation accumulator number of samples
+FIRE_acc: emitted infrared (longwave) radiation accumulator number of samples
+FIRE_R_acc: Rural emitted infrared (longwave) radiation accumulator number of samples
+FIRE_U_acc: Urban emitted infrared (longwave) radiation accumulator number of samples
+FLDS_acc: atmospheric longwave radiation accumulator number of samples
+FPSN_acc: photosynthesis accumulator number of samples
+FPSN_WC_acc: Rubisco-limited photosynthesis accumulator number of samples
+FPSN_WJ_acc: RuBP-limited photosynthesis accumulator number of samples
+FPSN_WP_acc: Product-limited photosynthesis accumulator number of samples
+FROST_TABLE_acc: frost table depth (vegetated landunits only) accumulator number of samples
+FSA_acc: absorbed solar radiation accumulator number of samples
+FSAT_acc: fractional area with water table at surface accumulator number of samples
+FSA_R_acc: Rural absorbed solar radiation accumulator number of samples
+FSA_U_acc: Urban absorbed solar radiation accumulator number of samples
+FSDS_acc: atmospheric incident solar radiation accumulator number of samples
+FSDSND_acc: direct nir incident solar radiation accumulator number of samples
+FSDSNDLN_acc: direct nir incident solar radiation at local noon accumulator number of samples
+FSDSNI_acc: diffuse nir incident solar radiation accumulator number of samples
+FSDSVD_acc: direct vis incident solar radiation accumulator number of samples
+FSDSVDLN_acc: direct vis incident solar radiation at local noon accumulator number of samples
+FSDSVI_acc: diffuse vis incident solar radiation accumulator number of samples
+FSDSVILN_acc: diffuse vis incident solar radiation at local noon accumulator number of samples
+FSH_acc: sensible heat accumulator number of samples
+FSH_G_acc: sensible heat from ground accumulator number of samples
+FSH_NODYNLNDUSE_acc: sensible heat not including correction for land use change accumulator number of samples
+FSH_R_acc: Rural sensible heat accumulator number of samples
+FSH_U_acc: Urban sensible heat accumulator number of samples
+FSH_V_acc: sensible heat from veg accumulator number of samples
+FSM_acc: snow melt heat flux accumulator number of samples
+FSM_R_acc: Rural snow melt heat flux accumulator number of samples
+FSM_U_acc: Urban snow melt heat flux accumulator number of samples
+FSNO_acc: fraction of ground covered by snow accumulator number of samples
+FSNO_EFF_acc: effective fraction of ground covered by snow accumulator number of samples
+FSR_acc: reflected solar radiation accumulator number of samples
+FSRND_acc: direct nir reflected solar radiation accumulator number of samples
+FSRNDLN_acc: direct nir reflected solar radiation at local noon accumulator number of samples
+FSRNI_acc: diffuse nir reflected solar radiation accumulator number of samples
+FSRVD_acc: direct vis reflected solar radiation accumulator number of samples
+FSRVDLN_acc: direct vis reflected solar radiation at local noon accumulator number of samples
+FSRVI_acc: diffuse vis reflected solar radiation accumulator number of samples
+GC_HEAT1_acc: initial gridcell total heat content accumulator number of samples
+GC_ICE1_acc: initial gridcell total ice content accumulator number of samples
+GC_LIQ1_acc: initial gridcell total liq content accumulator number of samples
+H2OCAN_acc: intercepted water accumulator number of samples
+H2OSFC_acc: surface water depth accumulator number of samples
+H2OSNO_acc: snow depth (liquid water) accumulator number of samples
+H2OSNO_TOP_acc: mass of snow in top snow layer accumulator number of samples
+H2OSOI_acc: volumetric soil water (vegetated landunits only) accumulator number of samples
+HC_acc: heat content of soil/snow/lake accumulator number of samples
+HCSOI_acc: soil heat content accumulator number of samples
+HEAT_FROM_AC_acc: sensible heat flux put into canyon due to heat removed from air accumulator number of samples
+INT_SNOW_acc: accumulated swe (vegetated landunits only) accumulator number of samples
+LAISHA_acc: shaded projected leaf area index accumulator number of samples
+LAISUN_acc: sunlit projected leaf area index accumulator number of samples
+LAKEICEFRAC_acc: lake layer ice mass fraction accumulator number of samples
+LAKEICETHICK_acc: thickness of lake ice (including physical expansion on freezing) accumulator number of samples
+OCDEP_acc: total OC deposition (dry+wet) from atmosphere accumulator number of samples
+PARVEGLN_acc: absorbed par by vegetation at local noon accumulator number of samples
+PBOT_acc: atmospheric pressure accumulator number of samples
+PCO2_acc: atmospheric partial pressure of CO2 accumulator number of samples
+PCT_LANDUNIT_acc: % of each landunit on topounit accumulator number of samples
+"PCT_NAT_PFT_acc: % of each PFT on the natural vegetation (i.e., soil) landunit accumulator number of samples"
+Q2M_acc: 2m specific humidity accumulator number of samples
+QBOT_acc: atmospheric specific humidity accumulator number of samples
+QCHARGE_acc: aquifer recharge rate (vegetated landunits only) accumulator number of samples
+QDRAI_acc: sub-surface drainage accumulator number of samples
+QDRAI_PERCH_acc: perched wt drainage accumulator number of samples
+QDRAI_XS_acc: saturation excess drainage accumulator number of samples
+QDRIP_acc: throughfall accumulator number of samples
+QFLOOD_acc: runoff from river flooding accumulator number of samples
+QFLX_ICE_DYNBAL_acc: ice dynamic land cover change conversion runoff flux accumulator number of samples
+QFLX_LIQ_DYNBAL_acc: liq dynamic land cover change conversion runoff flux accumulator number of samples
+QH2OSFC_acc: surface water runoff accumulator number of samples
+QINFL_acc: infiltration accumulator number of samples
+QINTR_acc: interception accumulator number of samples
+QIRRIG_GRND_acc: Groundwater irrigation accumulator number of samples
+QIRRIG_ORIG_acc: Original total irrigation water demand (surface + ground) accumulator number of samples
+QIRRIG_REAL_acc: actual water added through irrigation (surface + ground) accumulator number of samples
+QIRRIG_SURF_acc: Surface water irrigation accumulator number of samples
+QIRRIG_WM_acc: Surface water irrigation demand sent to MOSART/WM accumulator number of samples
+QOVER_acc: surface runoff accumulator number of samples
+"QRGWL_acc: surface runoff at glaciers (liquid only), wetlands, lakes accumulator number of samples"
+QRUNOFF_acc: total liquid runoff (does not include QSNWCPICE) accumulator number of samples
+QRUNOFF_NODYNLNDUSE_acc: total liquid runoff (does not include QSNWCPICE) not including c accumulator number of samples
+QRUNOFF_R_acc: Rural total runoff accumulator number of samples
+QRUNOFF_U_acc: Urban total runoff accumulator number of samples
+QSNOMELT_acc: snow melt accumulator number of samples
+QSNWCPICE_acc: excess snowfall due to snow capping accumulator number of samples
+QSNWCPICE_NODYNLNDUSE_acc: excess snowfall due to snow capping not including correction for accumulator number of samples
+QSOIL_acc: Ground evaporation (soil/snow evaporation + soil/snow sublimatio accumulator number of samples
+QVEGE_acc: canopy evaporation accumulator number of samples
+QVEGT_acc: canopy transpiration accumulator number of samples
+RAIN_acc: atmospheric rain accumulator number of samples
+RH2M_acc: 2m relative humidity accumulator number of samples
+RH2M_R_acc: Rural 2m specific humidity accumulator number of samples
+RH2M_U_acc: Urban 2m relative humidity accumulator number of samples
+SABG_acc: solar rad absorbed by ground accumulator number of samples
+SABG_PEN_acc: Rural solar rad penetrating top soil or snow layer accumulator number of samples
+SABV_acc: solar rad absorbed by veg accumulator number of samples
+SNOBCMCL_acc: mass of BC in snow column accumulator number of samples
+SNOBCMSL_acc: mass of BC in top snow layer accumulator number of samples
+SNODSTMCL_acc: mass of dust in snow column accumulator number of samples
+SNODSTMSL_acc: mass of dust in top snow layer accumulator number of samples
+SNOINTABS_acc: Percent of incoming solar absorbed by lower snow layers accumulator number of samples
+SNOOCMCL_acc: mass of OC in snow column accumulator number of samples
+SNOOCMSL_acc: mass of OC in top snow layer accumulator number of samples
+SNOW_acc: atmospheric snow accumulator number of samples
+SNOWDP_acc: gridcell mean snow height accumulator number of samples
+SNOWICE_acc: snow ice accumulator number of samples
+SNOWLIQ_acc: snow liquid water accumulator number of samples
+SNOW_DEPTH_acc: snow height of snow covered area accumulator number of samples
+SNOW_SINKS_acc: snow sinks (liquid water) accumulator number of samples
+SNOW_SOURCES_acc: snow sources (liquid water) accumulator number of samples
+SOILICE_acc: soil ice (vegetated landunits only) accumulator number of samples
+SOILICE_ICE_acc: soil ice (ice landunits only) accumulator number of samples
+SOILLIQ_acc: soil liquid water (vegetated landunits only) accumulator number of samples
+SOILLIQ_ICE_acc: soil liquid water (ice landunits only) accumulator number of samples
+SOILWATER_10CM_acc: soil liquid water + ice in top 10cm of soil (veg landunits only) accumulator number of samples
+SUPPLY_acc: runoff supply for land use accumulator number of samples
+SoilAlpha_acc: factor limiting ground evap accumulator number of samples
+SoilAlpha_U_acc: urban factor limiting ground evap accumulator number of samples
+TAUX_acc: zonal surface stress accumulator number of samples
+TAUY_acc: meridional surface stress accumulator number of samples
+TBOT_acc: atmospheric air temperature accumulator number of samples
+TBUILD_acc: internal urban building temperature accumulator number of samples
+TG_acc: ground temperature accumulator number of samples
+TG_R_acc: Rural ground temperature accumulator number of samples
+TG_U_acc: Urban ground temperature accumulator number of samples
+TH2OSFC_acc: surface water temperature accumulator number of samples
+THBOT_acc: atmospheric air potential temperature accumulator number of samples
+TKE1_acc: top lake level eddy thermal conductivity accumulator number of samples
+TLAI_acc: total projected leaf area index accumulator number of samples
+TLAKE_acc: lake temperature accumulator number of samples
+TREFMNAV_acc: daily minimum of average 2-m temperature accumulator number of samples
+TREFMNAV_R_acc: Rural daily minimum of average 2-m temperature accumulator number of samples
+TREFMNAV_U_acc: Urban daily minimum of average 2-m temperature accumulator number of samples
+TREFMXAV_acc: daily maximum of average 2-m temperature accumulator number of samples
+TREFMXAV_R_acc: Rural daily maximum of average 2-m temperature accumulator number of samples
+TREFMXAV_U_acc: Urban daily maximum of average 2-m temperature accumulator number of samples
+TSA_acc: 2m air temperature accumulator number of samples
+TSAI_acc: total projected stem area index accumulator number of samples
+TSA_R_acc: Rural 2m air temperature accumulator number of samples
+TSA_U_acc: Urban 2m air temperature accumulator number of samples
+TSOI_acc: soil temperature (vegetated landunits only) accumulator number of samples
+TSOI_10CM_acc: soil temperature in top 10cm of soil accumulator number of samples
+TSOI_ICE_acc: soil temperature (ice landunits only) accumulator number of samples
+TV_acc: vegetation temperature accumulator number of samples
+TWS_acc: total water storage accumulator number of samples
+TWS_MONTH_BEGIN_acc: total water storage at the beginning of a month accumulator number of samples
+TWS_MONTH_END_acc: total water storage at the end of a month accumulator number of samples
+U10_acc: 10-m wind accumulator number of samples
+U10WITHGUSTS_acc: 10-m wind with gustiness enhancement included accumulator number of samples
+URBAN_AC_acc: urban air conditioning flux accumulator number of samples
+URBAN_HEAT_acc: urban heating flux accumulator number of samples
+VOLR_acc: river channel total water storage accumulator number of samples
+VOLRMCH_acc: river channel main channel water storage accumulator number of samples
+WA_acc: water in the unconfined aquifer (vegetated landunits only) accumulator number of samples
+WASTEHEAT_acc: sensible heat flux from heating/cooling sources of urban waste h accumulator number of samples
+WIND_acc: atmospheric wind velocity magnitude accumulator number of samples
+ZBOT_acc: atmospheric reference height accumulator number of samples
+ZWT_acc: water table depth (vegetated landunits only) accumulator number of samples
+ZWT_PERCH_acc: perched water table depth (vegetated landunits only) accumulator number of samples
+dov2xy: Output on 2D grid format (TRUE) or vector format (FALSE)
+ntimes: Number of time steps on file
+is_endhist: End of history file
+begtime: Beginning time
+num2d: Size of second dimension
+hpindex: History pointer index
+name: Fieldnames
+type1d: 1st dimension type
+type1d_out: 1st output dimension type
+type2d: 2nd dimension type
+p2c_scale_type: PFT to column scale type
+c2l_scale_type: column to landunit scale type
+l2g_scale_type: landunit to gridpoint scale type
+t2g_scale_type: topounit to gridpoint scale type
+ZSOI: soil depth
+DZSOI: soil thickness
+WATSAT: saturated soil water content (porosity)
+SUCSAT: saturated soil matric potential
+BSW: slope of soil water retention curve
+HKSAT: saturated hydraulic conductivity
+ZLAKE: lake layer node depth
+DZLAKE: lake layer thickness
