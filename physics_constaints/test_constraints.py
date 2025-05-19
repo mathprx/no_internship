@@ -11,7 +11,7 @@ Lf = 2264.705 # to be redefined with the exact fortran code value
 # Things to edit :
 #   fetch all the mising values 
 #   check the fortran code for the values of g, cp_air, Lv and Lf
-#   check that the sense of the variables is correct (top and bottom of the column)
+#   check that the direction of pressure is correct (top and bottom of the column)
 
 def T(i_column) : 
     return ds['T'].values[0,:,i_column]
