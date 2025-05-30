@@ -4,58 +4,57 @@ import torch.nn.functional as F
 
 
 class DataToFunction(nn.Module):
-    def __init__(self, input_profile_num, input_scalar_num, vertical_level_num):
+    def __init__(self, input_profile_num, input_scalar_num, vertical_levels):
         super().__init__()
         self.input_profile_num = input_profile_num
         self.input_scalar_num = input_scalar_num
-        self.vertical_level_num = vertical_level_num
+        self.vertical_levels = vertical_levels
 
     def forward(self, x):
         '''
-        x: (batch, input_profile_num*vertical_level_num + input_scalar_num)
+        x: (batch, input_profile_num*vertical_levels + input_scalar_num)
         '''
-        # Set x to (batch, input_profile_num + input_scalar_num, vertical_level) by repeating scalar values
-        x_profile = x[:, :self.input_profile_num * self.vertical_level_num]
-        x_profile = x_profile.reshape(-1, self.input_profile_num, self.vertical_level_num)  # (batch, input_profile_num, vertical_level_num)
+        # Set x to (batch, input_profile_num + input_scalar_num, vertical_levels) by repeating scalar values
+        x_profile = x[:, :self.input_profile_num * self.vertical_levels]
+        x_profile = x_profile.reshape(-1, self.input_profile_num, self.vertical_levels)  # (batch, input_profile_num, vertical_levels)
 
-        # Extract and repeat the scalar part along vertical_level_num
-        x_scalar = x[:, self.input_profile_num * self.vertical_level_num:]
-        x_scalar = x_scalar[:, :, None].repeat(1, 1, self.vertical_level_num)  # (batch, input_scalar_num, vertical_level_num)
+        # Extract and repeat the scalar part along vertical_levels
+        x_scalar = x[:, self.input_profile_num * self.vertical_levels:]
+        x_scalar = x_scalar[:, :, None].repeat(1, 1, self.vertical_levels)  # (batch, input_scalar_num, vertical_levels)
 
         # Concatenate along the profile+scalar feature dimension
-        x = torch.cat([x_profile, x_scalar], dim=1)  # (batch, input_profile_num + input_scalar_num, vertical_level_num)
+        x = torch.cat([x_profile, x_scalar], dim=1)  # (batch, input_profile_num + input_scalar_num, vertical_levels)
         return x
 
 
 class FunctionToDataMean(nn.Module): # Works fine for operators
-    def __init__(self, target_profile_num, target_scalar_num, vertical_level_num):
+    def __init__(self, target_profile_num, target_scalar_num):
         super().__init__()
-        self.vertical_level = vertical_level_num
         self.target_profile_num = target_profile_num
         self.target_scalar_num = target_scalar_num
     
     def forward(self, x):
-        """ x: (batch, target_profile_num + target_scalar_num, vertical_level_num ) """
-        # Set x to (batch, target_profile_num*vertical_level_num + target_scalar_num)
+        """ x: (batch, target_profile_num + target_scalar_num, vertical_levels ) """
+        # Set x to (batch, target_profile_num*vertical_levels + target_scalar_num)
         # Separate profile and scalar parts
-        x_profile = x[:, :self.target_profile_num, :]           # (batch, target_profile_num, vertical_level_num)
-        x_scalar = x[:, self.target_profile_num:, :]            # (batch, target_scalar_num, vertical_level_num)
+        x_profile = x[:, :self.target_profile_num, :]           # (batch, target_profile_num, vertical_levels)
+        x_scalar = x[:, self.target_profile_num:, :]            # (batch, target_scalar_num, vertical_levels)
 
         # Flatten the profile part across all vertical levels
-        x_profile_flat = x_profile.reshape(x.shape[0], -1)       # (batch, target_profile_num * vertical_level_num)
+        x_profile_flat = x_profile.reshape(x.shape[0], -1)       # (batch, target_profile_num * vertical_levels)
 
         # Average the scalar part over the vertical levels
         x_scalar_mean = x_scalar.mean(dim=2)                     # (batch, target_scalar_num)
 
         # Concatenate flattened profile + averaged scalar
-        x = torch.cat([x_profile_flat, x_scalar_mean], dim=1)    # (batch, target_profile_num * vertical_level_num + target_scalar_num)
+        x = torch.cat([x_profile_flat, x_scalar_mean], dim=1)    # (batch, target_profile_num * vertical_levels + target_scalar_num)
         return x
 
 
 class FunctionToDataNet(nn.Module): # Warning: this breaks the operator aspect but could be adapted to be a neural operator
-    def __init__(self, target_profile_num, target_scalar_num, vertical_level_num, out_network_dim):
+    def __init__(self, target_profile_num, target_scalar_num, vertical_levels, out_network_dim):
         super().__init__()
-        self.vertical_level = vertical_level_num
+        self.vertical_level = vertical_levels
         self.out_network_dim = out_network_dim
         self.target_profile_num = target_profile_num
         self.target_scalar_num = target_scalar_num
@@ -63,11 +62,11 @@ class FunctionToDataNet(nn.Module): # Warning: this breaks the operator aspect b
         self.layer2 = nn.Linear(self.out_network_dim, 1)
 
     def forward(self, x):
-        """ x: (batch, target_profile_num + target_scalar_num, vertical_level_num) """
-        # Set x to (batch, target_profile_num*vertical_level_num + target_scalar_num)
+        """ x: (batch, target_profile_num + target_scalar_num, vertical_levels) """
+        # Set x to (batch, target_profile_num*vertical_levels + target_scalar_num)
         # Separate profile and scalar parts
-        x_profile = x[:, :self.target_profile_num, :]           # (batch, target_profile_num, vertical_level_num)
-        x_scalar = x[:, self.target_profile_num:, :]            # (batch, target_scalar_num, vertical_level_num)
+        x_profile = x[:, :self.target_profile_num, :]           # (batch, target_profile_num, vertical_levels)
+        x_scalar = x[:, self.target_profile_num:, :]            # (batch, target_scalar_num, vertical_levels)
 
         # Compute a scalar from the profiles corresponding to scalar
         x_scalar = self.layer1(x_scalar)                   # (batch, target_scalar_num, out_network_dim)
@@ -76,10 +75,10 @@ class FunctionToDataNet(nn.Module): # Warning: this breaks the operator aspect b
         x_scalar = x_scalar.squeeze(2)                     # (batch, target_scalar_num)
 
         # Flatten the profile part across all vertical levels
-        x_profile_flat = x_profile.reshape(x.shape[0], -1)       # (batch, target_profile_num * vertical_level_num)
+        x_profile_flat = x_profile.reshape(x.shape[0], -1)       # (batch, target_profile_num * vertical_levels)
 
         # Concatenate flattened profile + averaged scalar
-        x = torch.cat([x_profile_flat, x_scalar], dim=1)    # (batch, target_profile_num * vertical_level_num + target_scalar_num)
+        x = torch.cat([x_profile_flat, x_scalar], dim=1)    # (batch, target_profile_num * vertical_levels + target_scalar_num)
         return x
 
 class ChannelLinearLayer(nn.Module):
@@ -162,9 +161,63 @@ class MLP(nn.Module):
             x = layer(x)
         return x
 
+class SpectralConvulution(nn.Module):
+    def __init__(self, in_channels, out_channels, modes):
+        super().__init__()
+        self.in_channels = in_channels
+        self.out_channels = out_channels
+        self.modes = modes
+        self.scale = (1 / (in_channels * out_channels))
+        self.weights = nn.Parameter(self.scale * torch.rand(in_channels, out_channels, self.modes, dtype=torch.cfloat))
+    
+    def complex_multiply(self, x, weights):
+        # (batch, in_channels, modes), (in_channels, out_channels, modes) -> (batch, out_channels, modes)
+        return torch.einsum("bix,iox->box", x, weights)
+    
+    def fft(self, x) :
+        """ x: (batch, channels, size) """
+        x = torch.fft.rfft(x, dim=2) # (batch, channels, size//2+1)
+        if x.shape[2] > self.modes:
+            x = x[:,:,:self.modes] # (batch, channels, modes)
+        elif x.shape[2] < self.modes:
+            x = F.pad(x, (0, self.modes - x.shape[2]), mode='constant', value=0) # (batch, channels, modes)
+        return x  
+
+
+    def ifft(self,x,size):
+        """ x: (batch, channels, modes) """
+        x = torch.fft.irfft(x, n=size, dim=2) # (batch, channels, size)
+        return x    
+
+    def forward(self, x):
+        """ x: (batch, input_channels, size) """
+
+        x_ft = self.fft(x) # (batch, input_channels, modes)
+        x_ft = self.complex_multiply(x_ft, self.weights) # (batch, output_channels, modes)
+        x = self.ifft(x_ft, x.shape[2]) # (batch, output_channels, size)
+
+        return x
 
 
 class FNOLayer(nn.Module):
-    def __init__(self,):
+    def __init__(self, input_channels, output_channels, modes):
         super().__init__()
+        self.input_channels = input_channels
+        self.output_channels = output_channels
+        self.modes = modes
+        self.spectral_conv = SpectralConvulution(self.input_channels, self.output_channels, self.modes)
+        self.skip_layer = nn.Conv1d(self.input_channels, self.output_channels, 1)
+    
+    def forward(self, x):
+        """ x: (batch, input_channels, size) """
+        
+        x_skip = self.skip_layer(x) # (batch, output_channels, size)
+        x_fourier = self.spectral_conv(x) # (batch, output_channels, size)
+        
+        x = x_skip + x_fourier
+        x = F.relu(x)
+
+        return x
+
+
 
