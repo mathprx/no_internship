@@ -24,18 +24,22 @@ if __name__ == "__main__":
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"Using device: {device}")
 
-    model = FNO( input_channels=data.input_scalar_num + data.input_profile_num,
+    neural_operator = FNO( input_channels=data.input_scalar_num + data.input_profile_num,
                 out_channels=data.output_scalar_num + data.output_profile_num,
                 hidden_channels=cfg.hidden_channels,
                 modes=cfg.modes,
                 num_layers=cfg.num_layers,
                 lifting_layers=cfg.lifting_layers,
-                projection_layers=cfg.projection_layers).to(device)
+                projection_layers=cfg.projection_layers)
+
+    # Add a layer that takes outupts of the no assicitated to scalar outputs (which are functions) and averages them to a scalar value
+    # This is the reason why the outputs int the dataset don't need to be tweaked
+    function_to_scalar = FunctionToDataMean(data.target_profile_num, data.target_scalar_num)
+
+    model = nn.Sequential(neural_operator, function_to_scalar).to(device)
 
     optimizer = optim.AdamW(model.parameters(), lr=cfg.learning_rate)
     criterion = nn.MSELoss()
-
-    
     scheduler = optim.lr_scheduler.StepLR(optimizer, step_size=cfg.scheduler.step.step_size, gamma=cfg.scheduler.step.gamma)
     
 
@@ -83,13 +87,13 @@ if __name__ == "__main__":
     save_path = os.path.join(cfg.save_path, cfg.expname)
     os.makedirs(save_path, exist_ok=True)
     torch.save(model.state_dict(), os.path.join(save_path, 'model.pth'))
-    data.save_norm(save
+    data.save_norm(save_path, write=True)
     OmegaConf.save(cfg, os.path.join(save_path, 'config.yaml'))
-    with open('train_loss.txt', 'w') as f:
+    with open(os.path.join(save_path,'train_loss.txt'), 'w') as f:
         for l in train_losses:
             f.write(f"{l}\n")
     
-    with open('val_loss.txt', 'w') as f:
+    with open(os.path.join(save_path,'val_loss.txt'), 'w') as f:
         for l in val_losses:
             f.write(f"{l}\n")
 

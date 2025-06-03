@@ -22,6 +22,10 @@ class TrainingDatasetNO(Dataset):
                  strato_lev_out = 12,
                  input_clip = True,
                  input_clip_rhonly = True,
+                 input_profile_num = 17,
+                 input_scalar_num = 9,
+                 output_profile_num = 8,
+                 output_scalar_num = 5,
                  vertical_levels = 60):
         """
         Args:
@@ -84,7 +88,13 @@ class TrainingDatasetNO(Dataset):
         if self.strato_lev_qinput <self.strato_lev:
             raise ValueError('strato_lev_qinput should be greater than or equal to strato_lev, otherwise inconsistent with E3SM')
         
+        self.input_profile_num = input_profile_num
+        self.input_scalar_num = input_scalar_num
+        self.output_profile_num = output_profile_num
+        self.output_scalar_num = output_scalar_num
         self.vertical_levels = vertical_levels
+
+        assert 60%vertical_levels == 0, "vertical_levels should be a divisor of 60 for now"
 
     def __len__(self):
         return self.total_samples
@@ -212,6 +222,10 @@ class ValidationDatasetNO(Dataset):
                  strato_lev_out = 12,
                  input_clip = True,
                  input_clip_rhonly = True,
+                 input_profile_num = 17,
+                 input_scalar_num = 9,
+                 output_profile_num = 8,
+                 output_scalar_num = 5,
                  vertical_levels = 60):
         """
         Args:
@@ -249,6 +263,14 @@ class ValidationDatasetNO(Dataset):
         if self.strato_lev_qinput <self.strato_lev:
             raise ValueError('strato_lev_qinput should be greater than or equal to strato_lev, otherwise inconsistent with E3SM')
         assert len(self.val_input) == len(self.val_target)
+
+        self.input_profile_num = input_profile_num
+        self.input_scalar_num = input_scalar_num
+        self.output_profile_num = output_profile_num
+        self.output_scalar_num = output_scalar_num
+        self.vertical_levels = vertical_levels
+
+        assert 60%vertical_levels == 0, "vertical_levels should be a divisor of 60 for now"
 
     def __len__(self):
         return len(self.val_input)
@@ -328,5 +350,9 @@ class ValidationDatasetNO(Dataset):
 
         # Concatenate along the profile+scalar feature dimension
         x = torch.cat([x_profile, x_scalar], dim=0)  # (input_profile_num + input_scalar_num, vertical_levels)
+
+        # change the vertical resolution of x and y to vertical_levels
+        step = 60 // self.vertical_levels
+        
 
         return x,y

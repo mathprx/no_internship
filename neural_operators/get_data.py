@@ -1,6 +1,6 @@
 from torch.utils.data import DataLoader
 import xarray as xr
-from climsim_datasets_neural_operators import TrainingDataset, ValidationDataset
+from climsim_datasets_neural_operators import TrainingDatasetNO, ValidationDatasetNO
 from climsim_utils.data_utils import *
 from omegaconf import OmegaConf
 
@@ -16,19 +16,20 @@ def get_data(cfg: OmegaConf):
                     input_mean = input_mean, 
                     input_max = input_max, 
                     input_min = input_min, 
-                    output_scale = output_scale)
+                    output_scale = output_scale,
+                    ml_backend = "pytorch")
     
     data.set_to_v2_rh_mc_vars()
-    input_scalar_num = data.input_scalar_num
-    input_profile_num = data.input_profile_num
-    output_scalar_num = data.output_scalar_num
-    output_profile_num = data.output_profile_num
-    vertical_levels = cfg.vertical_levels
+    input_scalar_num = 9 #data.input_scalar_num
+    input_profile_num = 17 #data.input_profile_num
+    output_scalar_num = 5 #data.output_scalar_num
+    output_profile_num = 8 #data.output_profile_num
+    vertical_levels = cfg.learning_vertical_levels
     
 
     input_sub, input_div, out_scale = data.save_norm(write=False)
 
-    train_dataset = TrainingDataset(parent_path = cfg.data_path,
+    train_dataset = TrainingDatasetNO(parent_path = cfg.data_path,
                                 input_sub = input_sub,
                                 input_div = input_div,
                                 out_scale = out_scale,
@@ -43,9 +44,15 @@ def get_data(cfg: OmegaConf):
                                 strato_lev_tinput = cfg.strato_lev_tinput,
                                 strato_lev_out = cfg.strato_lev_out,
                                 input_clip = cfg.input_clip,
-                                input_clip_rhonly = cfg.input_clip_rhonly)
+                                input_clip_rhonly = cfg.input_clip_rhonly,
+                                input_scalar_num = input_scalar_num,
+                                input_profile_num = input_profile_num,
+                                output_scalar_num = output_scalar_num,
+                                output_profile_num = output_profile_num,
+                                vertical_levels = vertical_levels,
+                                )
 
-    val_dataset = ValidationDataset(val_input_path = cfg.val_input_path,
+    val_dataset = ValidationDatasetNO(val_input_path = cfg.val_input_path,
                                     val_target_path = cfg.val_target_path,
                                     input_sub = input_sub,
                                     input_div = input_div,
@@ -61,7 +68,13 @@ def get_data(cfg: OmegaConf):
                                     strato_lev_tinput = cfg.strato_lev_tinput,
                                     strato_lev_out = cfg.strato_lev_out,
                                     input_clip = cfg.input_clip,
-                                    input_clip_rhonly = cfg.input_clip_rhonly)
+                                    input_clip_rhonly = cfg.input_clip_rhonly,
+                                    input_scalar_num = input_scalar_num,
+                                    input_profile_num = input_profile_num,
+                                    output_scalar_num = output_scalar_num,
+                                    output_profile_num = output_profile_num,
+                                    vertical_levels = vertical_levels,
+                                    )
     
     train_loader = DataLoader(train_dataset, batch_size=cfg.batch_size, shuffle=True)
     val_loader = DataLoader(val_dataset, batch_size=cfg.batch_size, shuffle=False)
