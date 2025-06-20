@@ -32,13 +32,11 @@ input_clip_rhonly: True
 seed: 43
 restart_path: ''
 save_path: '/work/FAC/FGSE/IDYST/tbeucler/ai4pex/Physics_no_offline/saved_models'
-expname: 'FNO_mathieu_long_steps'
+expname: 'FNO_30_levels'
 num_workers: 32
 batch_size: 1024
 epochs: 12
 learning_rate: 0.001
-save_top_ckpts: 15
-top_ckpt_mode: 'min'
 optimizer: 'AdamW'
 loss: 'Huber'
 scheduler_name: 'step'
@@ -46,28 +44,14 @@ scheduler:
    step:
       step_size: 6
       gamma: .05
-   plateau:
-      patience: 2
-      factor: 0.1
-   cosine:
-      T_max: 2
-      eta_min: 0.00001
-   cosine_warmup:
-      T_0: 5
-      T_mult: 1
-      eta_min: 1.5e-6
-scheduler_warmup: 
-   enable: False
-   warmup_steps: 20
-   warmup_strategy: 'cos'
-   init_lr: 1e-7
-early_stop_step: -1
-logger: 'wandb'
 wandb:
-   project: "climsim3_ensembles"
+   project: "Neural_Operators_climsim"
    entity: "mathieu-prioux-university-of-lausanne"
 
+# Learning phase settings
+learning_vertical_levels: 30 # number of vertical levels in the learning phase, at most 60
+
 # model hyperparameters 
-modes: 30 # number of Fourier modes to multiply, at most floor(N/2) + 1 with N=height=60
+modes: 16 # number of Fourier modes to multiply, at most floor(N/2) + 1 with N=lerning_vertical_levels
 channel_dim: 96 # channel dimension
 out_network_dim: 128 # width of the output network

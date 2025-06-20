@@ -178,28 +178,21 @@ class TrainingDatasetNO(Dataset):
         # Convert to torch tensors
         x, y =  torch.tensor(x, dtype=torch.float32), torch.tensor(y, dtype=torch.float32)
 
-        # Set x to (input_profile_num + input_scalar_num, vertical_levels) by repeating scalar values
-        x_profile = x[:self.input_profile_num * self.vertical_levels]
-        x_profile = x_profile.reshape(self.input_profile_num, self.vertical_levels)  # (input_profile_num, vertical_levels)
+        # Set x to (input_profile_num + input_scalar_num, data_levels (=60)) by repeating scalar values
+        x_profile = x[:self.input_profile_num * 60]
+        x_profile = x_profile.reshape(self.input_profile_num, 60)  # (input_profile_num, data_levels (=60))
 
-        # Extract and repeat the scalar part along vertical_levels
-        x_scalar = x[self.input_profile_num * self.vertical_levels:]
-        x_scalar = x_scalar[:, None].repeat(1, self.vertical_levels)  # (input_scalar_num, vertical_levels)
+        # Extract and repeat the scalar part along data_levels (=60)
+        x_scalar = x[self.input_profile_num * 60:]
+        x_scalar = x_scalar[:, None].repeat(1, 60)  # (input_scalar_num, data_levels (=60))
 
         # Concatenate along the profile+scalar feature dimension
-        x = torch.cat([x_profile, x_scalar], dim=0)  # (input_profile_num + input_scalar_num, vertical_levels)
+        x = torch.cat([x_profile, x_scalar], dim=0)  # (input_profile_num + input_scalar_num, data_levels (=60))
 
-        # Set y to (target_profile_num + target_scalar_num, vertical_levels) by repeating scalar values
-        # not needed since we add a layer to reshape y in models
-        # y_profile = y[:self.target_profile_num * self.vertical_levels]
-        # y_profile = y_profile.reshape(self.target_profile_num, self.vertical_levels)
-
-        # # Extract and repeat the scalar part along vertical_levels
-        # y_scalar = y[self.target_profile_num * self.vertical_levels:]
-        # y_scalar = y_scalar[:, None].repeat(1, self.vertical_levels)
-
-        # # Concatenate along the profile+scalar feature dimension
-        # y = torch.cat([y_profile, y_scalar], dim=0)
+        # change the vertical resolution of x and y to vertical_levels (downsample)
+        step = 60 // self.vertical_levels
+        x = x[::step]
+        y = y[::step]
 
         return x,y
 
@@ -340,19 +333,20 @@ class ValidationDatasetNO(Dataset):
         # Convert to torch tensors
         x, y =  torch.tensor(x, dtype=torch.float32), torch.tensor(y, dtype=torch.float32)
 
-        # Set x to (input_profile_num + input_scalar_num, vertical_levels) by repeating scalar values
-        x_profile = x[:self.input_profile_num * self.vertical_levels]
-        x_profile = x_profile.reshape(self.input_profile_num, self.vertical_levels)  # (input_profile_num, vertical_levels)
+        # Set x to (input_profile_num + input_scalar_num, data_levels (=60)) by repeating scalar values
+        x_profile = x[:self.input_profile_num * 60]
+        x_profile = x_profile.reshape(self.input_profile_num, 60)  # (input_profile_num, data_levels (=60))
 
-        # Extract and repeat the scalar part along vertical_levels
-        x_scalar = x[self.input_profile_num * self.vertical_levels:]
-        x_scalar = x_scalar[:, None].repeat(1, self.vertical_levels)  # (input_scalar_num, vertical_levels)
+        # Extract and repeat the scalar part along data_levels (=60)
+        x_scalar = x[self.input_profile_num * 60:]
+        x_scalar = x_scalar[:, None].repeat(1, 60)  # (input_scalar_num, data_levels (=60))
 
         # Concatenate along the profile+scalar feature dimension
-        x = torch.cat([x_profile, x_scalar], dim=0)  # (input_profile_num + input_scalar_num, vertical_levels)
+        x = torch.cat([x_profile, x_scalar], dim=0)  # (input_profile_num + input_scalar_num, data_levels (=60))
 
-        # change the vertical resolution of x and y to vertical_levels
+        # change the vertical resolution of x and y to vertical_levels (downsample)
         step = 60 // self.vertical_levels
-        
-
+        x = x[::step]
+        y = y[::step]
+    
         return x,y

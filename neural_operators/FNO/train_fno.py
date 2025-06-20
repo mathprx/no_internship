@@ -6,18 +6,28 @@ import numpy as np
 import xarray as xr
 import sys
 import os
+import wandb
 from omegaconf import OmegaConf
-from fno import FNO, FunctionToDataMean
+from fno import FNO
 # Get the parent directory and add it to the path
 parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.insert(0, parent_dir)
 from get_data import get_data
+from no_layers import FunctionToDataMean
+
 
 # Load the configuration file
 cfg = OmegaConf.load("config.yaml")
 
 
 if __name__ == "__main__":
+
+    run = wandb.init(
+        project=cfg.wandb.project,
+        entity=cfg.wandb.entity,
+        name=cfg.expname,
+        config=OmegaConf.to_container(cfg, resolve=True),
+    )
 
     data, train_loader, val_loader = get_data(cfg)
     
@@ -32,8 +42,8 @@ if __name__ == "__main__":
                 lifting_layers=cfg.lifting_layers,
                 projection_layers=cfg.projection_layers)
 
-    # Add a layer that takes outupts of the no assicitated to scalar outputs (which are functions) and averages them to a scalar value
-    # This is the reason why the outputs int the dataset don't need to be tweaked
+    # Add a layer that takes outupts of the no assicitated to scalar outputs (which are functions represented by vectors and averages them to a scalar value
+    # This is the reason why the outputs in the dataset don't need to be tweaked
     function_to_scalar = FunctionToDataMean(data.target_profile_num, data.target_scalar_num)
 
     model = nn.Sequential(neural_operator, function_to_scalar).to(device)
@@ -78,11 +88,19 @@ if __name__ == "__main__":
         # Step the scheduler (some schedulers may require the validation loss)
         scheduler.step()
         
+        # Log to wandb
+        wandb.log({
+            "epoch": epoch + 1,
+            "train_loss": avg_train_loss,
+            "val_loss": avg_eval_loss,
+        })
+
         train_losses.append(avg_train_loss)
         val_losses.append(avg_eval_loss)
 
         print(f"Epoch {epoch+1}/{cfg.epochs}, Train Loss: {avg_train_loss:.4f}, Val Loss: {avg_eval_loss:.4f}")
 
+    wandb.finish()
     # Save the model
     save_path = os.path.join(cfg.save_path, cfg.expname)
     os.makedirs(save_path, exist_ok=True)
