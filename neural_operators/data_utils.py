@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import pickle
 import glob, os
 import re
-import tensorflow as tf
+#import tensorflow as tf
 import netCDF4
 import copy
 import string
@@ -49,7 +49,7 @@ class data_utils:
                  input_max,
                  input_min,
                  output_scale,
-                 ml_backend: MLBackendType = "tensorflow",
+                 ml_backend: MLBackendType = "pytorch",
                  normalize = True,
                  input_abbrev = 'mli',
                  output_abbrev = 'mlo',

@@ -16,8 +16,7 @@ def get_data(cfg: OmegaConf):
                     input_mean = input_mean, 
                     input_max = input_max, 
                     input_min = input_min, 
-                    output_scale = output_scale,
-                    ml_backend = "pytorch")
+                    output_scale = output_scale)
     
     data.set_to_v2_rh_mc_vars()
     input_scalar_num = 9 #data.input_scalar_num

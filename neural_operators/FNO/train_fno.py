@@ -34,8 +34,8 @@ if __name__ == "__main__":
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"Using device: {device}")
 
-    neural_operator = FNO( input_channels=data.input_scalar_num + data.input_profile_num,
-                out_channels=data.output_scalar_num + data.output_profile_num,
+    neural_operator = FNO( in_channels=data.input_scalar_num + data.input_profile_num,
+                out_channels=data.target_scalar_num + data.target_profile_num,
                 hidden_channels=cfg.hidden_channels,
                 modes=cfg.modes,
                 num_layers=cfg.num_layers,
