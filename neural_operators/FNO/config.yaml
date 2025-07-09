@@ -1,5 +1,5 @@
 # paths to training and validation data
-data_path: '/work/FAC/FGSE/IDYST/tbeucler/ai4pex/container/climsim-container/storage/climsim_highres_v2_rh_mc/train_set/'
+data_path: '/work/FAC/FGSE/IDYST/tbeucler/ai4pex/container/climsim-container/storage/climsim_highres_v2_rh_mc/train_set'
 val_input_path: '/work/FAC/FGSE/IDYST/tbeucler/ai4pex/container/climsim-container/storage/climsim_highres_v2_rh_mc/val_set/val_input.npy'
 val_target_path: '/work/FAC/FGSE/IDYST/tbeucler/ai4pex/container/climsim-container/storage/climsim_highres_v2_rh_mc/val_set/val_target.npy'
 
@@ -30,13 +30,11 @@ input_clip_rhonly: True
 
 # training settings
 seed: 43
-restart_path: ''
 save_path: '/work/FAC/FGSE/IDYST/tbeucler/ai4pex/Physics_no_offline/saved_models'
 expname: 'FNO_30_levels'
-num_workers: 32
-batch_size: 1024
-epochs: 0
-learning_rate: 0.001
+batch_size: 200
+epochs: 15
+learning_rate: 0.00001
 optimizer: 'AdamW'
 loss: 'Huber'
 scheduler_name: 'step'
@@ -49,11 +47,11 @@ wandb:
    entity: "mathieu-prioux-university-of-lausanne"
 
 # Learning phase settings
-learning_vertical_levels: 30 # number of vertical levels in the learning phase, at most 60
+learning_vertical_levels: 30 # number of vertical levels in the learning phase, at most 60 and need be a divisor of 60
 
 # model hyperparameters 
 hidden_channels: 64 # number of hidden channels in the FNO
 modes: 16 # number of Fourier modes to multiply, at most floor(N/2) + 1 with N=lerning_vertical_levels
 num_layers: 3 # number of layers in the FNO
-lifting_layers: 1
-projection_layers: 1
+lifting_layers: [20]
+projection_layers: [20]

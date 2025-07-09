@@ -40,7 +40,6 @@ class TrainingDatasetNO(Dataset):
         """
         self.parent_path = parent_path
         self.input_paths = glob.glob(f'{parent_path}/**/train_input.h5', recursive=True)
-        print('input paths:', self.input_paths)
         if not self.input_paths:
             raise FileNotFoundError("No 'train_input.h5' files found under the specified parent path.")
         self.target_paths = [path.replace('train_input.h5', 'train_target.h5') for path in self.input_paths]
@@ -189,10 +188,11 @@ class TrainingDatasetNO(Dataset):
         # Concatenate along the profile+scalar feature dimension
         x = torch.cat([x_profile, x_scalar], dim=0)  # (input_profile_num + input_scalar_num, data_levels (=60))
 
-        # change the vertical resolution of x and y to vertical_levels (downsample)
+        # change the vertical resolution of x AND y to vertical_levels (downsample)
         step = 60 // self.vertical_levels
-        x = x[::step]
-        y = y[::step]
+        x = x[:,::step]
+
+        y = torch.concatenate((y[:self.output_profile_num*60:step],y[self.output_profile_num*60:]))
 
         return x,y
 
@@ -344,9 +344,10 @@ class ValidationDatasetNO(Dataset):
         # Concatenate along the profile+scalar feature dimension
         x = torch.cat([x_profile, x_scalar], dim=0)  # (input_profile_num + input_scalar_num, data_levels (=60))
 
-        # change the vertical resolution of x and y to vertical_levels (downsample)
+        # change the vertical resolution of x AND y to vertical_levels (downsample)
         step = 60 // self.vertical_levels
-        x = x[::step]
-        y = y[::step]
+        x = x[:,::step]
+
+        y = torch.concatenate((y[:self.output_profile_num*60:step],y[self.output_profile_num*60:]))
     
         return x,y

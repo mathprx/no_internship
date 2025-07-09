@@ -16,16 +16,15 @@
 
 #SBATCH --job-name train_fno
 #SBATCH --output train_fno_out.out
+##SBATCH --error=train_fno_err.err
 
-##SBATCH --output=out_%j.out
-##SBATCH --error=eo_%j.err
-
+module purge
 module load miniforge3
 conda_init
-conda activate no_training
 module load cuda/12.6.2
-
 source ../ddp_export.sh
 
+conda activate no_training
+echo $CONDA_DEFAULT_ENV
 cd ..
-srun -n $SLURM_NTASKS python train_fno.py 
+python train_fno.py 

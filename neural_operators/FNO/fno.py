@@ -11,13 +11,13 @@ from no_layers import FNOLayer, ChannelMLPLayer
 
 class FNO(nn.Module):
     def __init__(self,
-                 in_channels,
-                 out_channels,
-                 hidden_channels,
-                 modes,
-                 num_layers,
-                 lifting_layers,
-                 projection_layers,
+                 in_channels, # Number of input channels
+                 out_channels, # Number of output channels
+                 hidden_channels, # Hidden channels in the FNO layers
+                 modes, # Number of Fourier modes sampled in the FNO layers
+                 num_layers, # Number of FNO layers
+                 lifting_layers, # List of lifting layer hidden channels 
+                 projection_layers, # List of projection layer hidden channels
     ):
         super().__init__()
         self.in_channels = in_channels
@@ -29,6 +29,7 @@ class FNO(nn.Module):
         self.projection_layers = projection_layers
 
         self.lifting = ChannelMLPLayer(in_channels, hidden_channels, lifting_layers)
+        print('In channels lifting :', in_channels)
         self.fno_layers = nn.ModuleList()
         for _ in range(num_layers):
             self.fno_layers.append(FNOLayer(hidden_channels, hidden_channels, modes))

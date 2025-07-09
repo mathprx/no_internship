@@ -1,12 +1,10 @@
 import torch
 import torch.nn as nn
 import torch.optim as optim
-from torch.utils.data import DataLoader
-import numpy as np
-import xarray as xr
 import sys
 import os
 import wandb
+from tqdm import tqdm
 from omegaconf import OmegaConf
 from fno import FNO
 # Get the parent directory and add it to the path
@@ -53,6 +51,12 @@ if __name__ == "__main__":
     scheduler = optim.lr_scheduler.StepLR(optimizer, step_size=cfg.scheduler.step.step_size, gamma=cfg.scheduler.step.gamma)
     
 
+    #debug
+    data_iter = iter(train_loader)
+    inputs, labels = next(data_iter)
+    print("Input shape:", inputs.shape)
+    print("Label shape:", labels.shape)
+
     train_losses = []
     val_losses = []
 
@@ -60,10 +64,11 @@ if __name__ == "__main__":
     
     for epoch in range(cfg.epochs):
 
+
         # Training loop
         total_train_loss = 0
         model.train()
-        for inputs, targets in train_loader:
+        for inputs, targets in tqdm(train_loader,desc=f"Epoch {epoch+1}"):
             inputs, targets = inputs.to(device), targets.to(device)
             optimizer.zero_grad()
             outputs = model(inputs)
@@ -117,8 +122,3 @@ if __name__ == "__main__":
 
     print(f"Model, losses and normalization saved to {save_path}")
     print("Training complete.")
-    
-
-
-    
-

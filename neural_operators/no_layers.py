@@ -96,18 +96,21 @@ class ChannelLinearLayer(nn.Module):
         return x
 
 class ChannelMLPLayer(nn.Module):
-    def __init__(self, in_channels, out_channels, hidden_channels, hidden_layers=1):
+    def __init__(self, 
+                 in_channels, # Number of input channels
+                 out_channels, # Number of output channels
+                 hidden_channels_list # List of channels for each hidden layer
+                 ):
         super().__init__()
-        self.in_channels = in_channels
-        self.hidden_channels = hidden_channels
         layers = torch.nn.ModuleList()
-        for i in range(hidden_layers):
+        n = len(hidden_channels_list)
+        for i in range(n):
             if i == 0:
-                layers.append(nn.Linear(self.in_channels, self.hidden_channels))
+                layers.append(nn.Linear(in_channels, hidden_channels_list[0]))
             else:
-                layers.append(nn.Linear(self.hidden_channels, self.hidden_channels))
+                layers.append(nn.Linear(hidden_channels_list[i-1], hidden_channels_list[i]))
             layers.append(nn.ReLU())
-        layers.append(nn.Linear(self.hidden_channels, out_channels))
+        layers.append(nn.Linear(hidden_channels_list[n-1], out_channels))
         self.net = nn.Sequential(*layers)
 
     

@@ -1,8 +1,9 @@
 from torch.utils.data import DataLoader
 import xarray as xr
 from climsim_datasets_neural_operators import TrainingDatasetNO, ValidationDatasetNO
-from climsim_utils.data_utils import *
+from climsim_utils.data_utils_highres import *
 from omegaconf import OmegaConf
+from tqdm import tqdm
 
 def get_data(cfg: OmegaConf):
     grid_info = xr.open_dataset(cfg.grid_info_path)
@@ -19,12 +20,17 @@ def get_data(cfg: OmegaConf):
                     output_scale = output_scale)
     
     data.set_to_v2_rh_mc_vars()
-    input_scalar_num = 9 #data.input_scalar_num
-    input_profile_num = 17 #data.input_profile_num
-    output_scalar_num = 5 #data.output_scalar_num
-    output_profile_num = 8 #data.output_profile_num
+    input_scalar_num = data.input_scalar_num
+    input_profile_num = data.input_profile_num
+    output_scalar_num = data.target_scalar_num
+    output_profile_num = data.target_profile_num
     vertical_levels = cfg.learning_vertical_levels
     
+    print('Input scalar num:', input_scalar_num)
+    print('Input profile num:', input_profile_num)
+    print('Output scalar num:', output_scalar_num)
+    print('Output profile num:', output_profile_num)
+    print('Vertical levels:', vertical_levels)
 
     input_sub, input_div, out_scale = data.save_norm(write=False)
 
@@ -75,7 +81,10 @@ def get_data(cfg: OmegaConf):
                                     vertical_levels = vertical_levels,
                                     )
     
+    print('Number of training samples:', len(train_dataset))
+    print('Number of validation samples:', len(val_dataset))
+
     train_loader = DataLoader(train_dataset, batch_size=cfg.batch_size, shuffle=True)
-    val_loader = DataLoader(val_dataset, batch_size=cfg.batch_size, shuffle=False)
+    val_loader = DataLoader(val_dataset, batch_size=cfg.batch_size, shuffle=True)
 
     return data, train_loader, val_loader
