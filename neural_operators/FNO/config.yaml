@@ -32,7 +32,7 @@ input_clip_rhonly: True
 seed: 43
 save_path: '/work/FAC/FGSE/IDYST/tbeucler/ai4pex/Physics_no_offline/saved_models'
 expname: 'FNO_30_levels'
-batch_size: 200
+batch_size: 1024
 epochs: 15
 learning_rate: 0.00001
 optimizer: 'AdamW'

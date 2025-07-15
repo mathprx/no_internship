@@ -1,6 +1,6 @@
 from torch.utils.data import DataLoader
 import xarray as xr
-from climsim_datasets_neural_operators import TrainingDatasetNO, ValidationDatasetNO
+from climsim_datasets_neural_operators2 import DatasetNO
 from climsim_utils.data_utils_highres import *
 from omegaconf import OmegaConf
 from tqdm import tqdm
@@ -34,7 +34,8 @@ def get_data(cfg: OmegaConf):
 
     input_sub, input_div, out_scale = data.save_norm(write=False)
 
-    train_dataset = TrainingDatasetNO(parent_path = cfg.data_path,
+    train_dataset = DatasetNO(  input_path = cfg.train_input_path,
+                                target_path = cfg.train_target_path,
                                 input_sub = input_sub,
                                 input_div = input_div,
                                 out_scale = out_scale,
