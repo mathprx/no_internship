@@ -58,7 +58,7 @@ def get_data(cfg: OmegaConf):
                                 vertical_levels = vertical_levels,
                                 )
 
-    val_dataset = ValidationDatasetNO(val_input_path = cfg.val_input_path,
+    val_dataset = DatasetNO(val_input_path = cfg.val_input_path,
                                     val_target_path = cfg.val_target_path,
                                     input_sub = input_sub,
                                     input_div = input_div,
